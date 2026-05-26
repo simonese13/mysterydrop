@@ -83,4 +83,29 @@ function SuccessContent() {
               Ti contatteremo via email per la consegna del premio.
             </p>
           )}
-          <a href="/" style={{ background: "transparent", color: "#f5c842", fontWeight: 700, fontSize: "1rem", padding: "14px 32px", border: "1px solid rgba(245,200,66,0.4)", borderRadius: "10px",
+          <a href="/" style={{ background: "transparent", color: "#f5c842", fontWeight: 700, fontSize: "1rem", padding: "14px 32px", border: "1px solid rgba(245,200,66,0.4)", borderRadius: "10px", textDecoration: "none" }}>
+            ← Apri un'altra box
+          </a>
+        </div>
+      )}
+      <style>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-14px); }
+        }
+        @keyframes popIn {
+          from { transform: scale(0.7); opacity: 0; }
+          to { transform: scale(1); opacity: 1; }
+        }
+      `}</style>
+    </main>
+  );
+}
+
+export default function Success() {
+  return (
+    <Suspense fallback={<main style={{ background: "#0a0a0f", minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}><p style={{ color: "#8a8880" }}>Caricamento...</p></main>}>
+      <SuccessContent />
+    </Suspense>
+  );
+}
