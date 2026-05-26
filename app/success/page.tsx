@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
 type Prize = {
@@ -9,7 +9,7 @@ type Prize = {
   icon: string;
 };
 
-export default function Success() {
+function SuccessContent() {
   const [prize, setPrize] = useState<Prize | null>(null);
   const [discountCode, setDiscountCode] = useState<string | null>(null);
   const [revealed, setRevealed] = useState(false);
@@ -63,7 +63,6 @@ export default function Success() {
           <h1 style={{ fontWeight: 800, fontSize: "2.5rem", color: "#f5c842", marginBottom: "0.5rem" }}>Hai vinto!</h1>
           <h2 style={{ fontWeight: 700, fontSize: "1.5rem", marginBottom: "0.75rem" }}>{prize?.name}</h2>
           <p style={{ color: "#8a8880", marginBottom: "1.5rem", maxWidth: "340px", lineHeight: 1.6 }}>{prize?.description}</p>
-
           {discountCode && (
             <div style={{ background: "#13131a", border: "1px solid rgba(245,200,66,0.3)", borderRadius: "12px", padding: "1.25rem", marginBottom: "1.5rem", maxWidth: "340px" }}>
               <p style={{ color: "#8a8880", fontSize: "0.8rem", marginBottom: "0.75rem" }}>Il tuo codice sconto:</p>
@@ -79,28 +78,9 @@ export default function Success() {
               <p style={{ color: "#8a8880", fontSize: "0.75rem", marginTop: "0.75rem" }}>Valido per 90 giorni — inseriscilo al prossimo checkout</p>
             </div>
           )}
-
           {!discountCode && (
             <p style={{ color: "#8a8880", fontSize: "0.85rem", marginBottom: "1.5rem" }}>
               Ti contatteremo via email per la consegna del premio.
             </p>
           )}
-
-          <a href="/" style={{ background: "transparent", color: "#f5c842", fontWeight: 700, fontSize: "1rem", padding: "14px 32px", border: "1px solid rgba(245,200,66,0.4)", borderRadius: "10px", textDecoration: "none" }}>
-            ← Apri un'altra box
-          </a>
-        </div>
-      )}
-      <style>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-14px); }
-        }
-        @keyframes popIn {
-          from { transform: scale(0.7); opacity: 0; }
-          to { transform: scale(1); opacity: 1; }
-        }
-      `}</style>
-    </main>
-  );
-}
+          <a href="/" style={{ background: "transparent", color: "#f5c842", fontWeight: 700, fontSize: "1rem", padding: "14px 32px", border: "1px solid rgba(245,200,66,0.4)", borderRadius: "10px",
