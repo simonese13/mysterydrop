@@ -1,0 +1,45 @@
+{
+  "nav": {
+    "prizes": "🍎 Nagrody Apple"
+  },
+  "hero": {
+    "tag": "✦ Tylko 4,99€ za pudełko",
+    "title1": "Otwórz pudełko.",
+    "title2": "Wygraj Apple.",
+    "description": "Każde pudełko kryje nagrodę Apple. iPhone, AirPods, MacBook i wiele więcej. Zawsze coś wygrywasz — gwarantowane."
+  },
+  "checkout": {
+    "discountPlaceholder": "Masz kod rabatowy? (np. MD-XXXXXXXX)",
+    "payButton": "💳 Zapłać kartą / Apple Pay / Google Pay",
+    "loading": "Ładowanie...",
+    "bitcoinButton": "₿ Zapłać Bitcoinem",
+    "bitcoinAmount": "Wyślij dokładnie",
+    "bitcoinAddress": "na ten adres:",
+    "bitcoinEmail": "Po płatności wyślij nam potwierdzenie na",
+    "bitcoinActivation": "aktywujemy twoje pudełko w ciągu 24h.",
+    "codeError": "Nieprawidłowy lub wygasły kod"
+  },
+  "prizes": {
+    "label": "Nagrody",
+    "title": "Co możesz wygrać"
+  },
+  "footer": {
+    "odds": "Szanse na wygraną",
+    "copyright": "© 2025 MysteryDrop",
+    "legal": "Usługa przeznaczona dla pełnoletnich. Każde pudełko zawiera gwarantowaną nagrodę."
+  },
+  "success": {
+    "preparing": "Przygotowujemy twoją nagrodę...",
+    "received": "Płatność otrzymana!",
+    "ready": "Twoje pudełko jest gotowe — kliknij, aby je otworzyć!",
+    "guaranteed": "✦ Zawsze coś wygrywasz, nigdy nie zostawiamy cię bez nagrody",
+    "openButton": "🎉 Otwórz pudełko!",
+    "won": "Wygrałeś!",
+    "codeLabel": "Twój kod rabatowy:",
+    "codeCopied": "✓ Skopiowano!",
+    "codeCopy": "📋 Kopiuj kod",
+    "codeExpiry": "Ważny przez 90 dni — użyj przy następnym zakupie",
+    "emailContact": "Skontaktujemy się z tobą emailem w sprawie dostawy nagrody.",
+    "another": "← Otwórz kolejne pudełko"
+  }
+}

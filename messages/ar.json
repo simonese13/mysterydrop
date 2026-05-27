@@ -1,0 +1,45 @@
+{
+  "nav": {
+    "prizes": "🍎 جوائز Apple"
+  },
+  "hero": {
+    "tag": "✦ فقط 4.99€ للصندوق",
+    "title1": "افتح الصندوق.",
+    "title2": "اربح Apple.",
+    "description": "كل صندوق يخفي جائزة Apple. iPhone، AirPods، MacBook والمزيد. تفوز دائماً بشيء — مضمون."
+  },
+  "checkout": {
+    "discountPlaceholder": "هل لديك كود خصم؟ (مثال: MD-XXXXXXXX)",
+    "payButton": "💳 ادفع بالبطاقة / Apple Pay / Google Pay",
+    "loading": "جاري التحميل...",
+    "bitcoinButton": "₿ ادفع بالبيتكوين",
+    "bitcoinAmount": "أرسل بالضبط",
+    "bitcoinAddress": "إلى هذا العنوان:",
+    "bitcoinEmail": "بعد الدفع أرسل لنا الإيصال على",
+    "bitcoinActivation": "سنفعّل صندوقك خلال 24 ساعة.",
+    "codeError": "الكود غير صالح أو منتهي الصلاحية"
+  },
+  "prizes": {
+    "label": "الجوائز",
+    "title": "ما يمكنك الفوز به"
+  },
+  "footer": {
+    "odds": "احتمالات الفوز",
+    "copyright": "© 2025 MysteryDrop",
+    "legal": "الخدمة مخصصة للبالغين. كل صندوق يحتوي على جائزة مضمونة."
+  },
+  "success": {
+    "preparing": "جاري تحضير جائزتك...",
+    "received": "تم استلام الدفع!",
+    "ready": "صندوقك جاهز — انقر لفتحه!",
+    "guaranteed": "✦ تفوز دائماً بشيء، لن نتركك بدون جائزة",
+    "openButton": "🎉 افتح الصندوق!",
+    "won": "لقد فزت!",
+    "codeLabel": "كود الخصم الخاص بك:",
+    "codeCopied": "✓ تم النسخ!",
+    "codeCopy": "📋 نسخ الكود",
+    "codeExpiry": "صالح لمدة 90 يوماً — استخدمه في عملية الشراء التالية",
+    "emailContact": "سنتواصل معك عبر البريد الإلكتروني لتسليم الجائزة.",
+    "another": "← افتح صندوقاً آخر"
+  }
+}

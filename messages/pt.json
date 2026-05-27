@@ -1,0 +1,45 @@
+{
+  "nav": {
+    "prizes": "🍎 Prêmios Apple"
+  },
+  "hero": {
+    "tag": "✦ Apenas €4,99 por caixa",
+    "title1": "Abra a caixa.",
+    "title2": "Ganhe Apple.",
+    "description": "Cada caixa esconde um prêmio Apple. iPhone, AirPods, MacBook e muito mais. Você sempre ganha algo — garantido."
+  },
+  "checkout": {
+    "discountPlaceholder": "Tem um código de desconto? (ex. MD-XXXXXXXX)",
+    "payButton": "💳 Pagar com Cartão / Apple Pay / Google Pay",
+    "loading": "Carregando...",
+    "bitcoinButton": "₿ Pagar com Bitcoin",
+    "bitcoinAmount": "Envie exatamente",
+    "bitcoinAddress": "para este endereço:",
+    "bitcoinEmail": "Após o pagamento envie-nos o recibo para",
+    "bitcoinActivation": "ativaremos sua caixa em 24h.",
+    "codeError": "Código inválido ou expirado"
+  },
+  "prizes": {
+    "label": "Os prêmios",
+    "title": "O que você pode ganhar"
+  },
+  "footer": {
+    "odds": "Probabilidades de ganhar",
+    "copyright": "© 2025 MysteryDrop",
+    "legal": "Serviço reservado para maiores de idade. Cada caixa contém um prêmio garantido."
+  },
+  "success": {
+    "preparing": "Preparando seu prêmio...",
+    "received": "Pagamento recebido!",
+    "ready": "Sua caixa está pronta — clique para abri-la!",
+    "guaranteed": "✦ Você sempre ganha algo, nunca te deixamos sem prêmio",
+    "openButton": "🎉 Abrir a caixa!",
+    "won": "Você ganhou!",
+    "codeLabel": "Seu código de desconto:",
+    "codeCopied": "✓ Copiado!",
+    "codeCopy": "📋 Copiar código",
+    "codeExpiry": "Válido por 90 dias — use na próxima compra",
+    "emailContact": "Entraremos em contato por email para a entrega do prêmio.",
+    "another": "← Abrir outra caixa"
+  }
+}

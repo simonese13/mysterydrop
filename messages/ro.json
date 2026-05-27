@@ -1,0 +1,45 @@
+{
+  "nav": {
+    "prizes": "🍎 Premii Apple"
+  },
+  "hero": {
+    "tag": "✦ Doar 4,99€ per cutie",
+    "title1": "Deschide cutia.",
+    "title2": "Câștigă Apple.",
+    "description": "Fiecare cutie ascunde un premiu Apple. iPhone, AirPods, MacBook și multe altele. Câștigi întotdeauna ceva — garantat."
+  },
+  "checkout": {
+    "discountPlaceholder": "Ai un cod de reducere? (ex. MD-XXXXXXXX)",
+    "payButton": "💳 Plătește cu Card / Apple Pay / Google Pay",
+    "loading": "Se încarcă...",
+    "bitcoinButton": "₿ Plătește cu Bitcoin",
+    "bitcoinAmount": "Trimite exact",
+    "bitcoinAddress": "la această adresă:",
+    "bitcoinEmail": "După plată trimite-ne chitanța la",
+    "bitcoinActivation": "vom activa cutia ta în 24h.",
+    "codeError": "Cod invalid sau expirat"
+  },
+  "prizes": {
+    "label": "Premiile",
+    "title": "Ce poți câștiga"
+  },
+  "footer": {
+    "odds": "Șanse de câștig",
+    "copyright": "© 2025 MysteryDrop",
+    "legal": "Serviciu rezervat persoanelor majore. Fiecare cutie conține un premiu garantat."
+  },
+  "success": {
+    "preparing": "Pregătim premiul tău...",
+    "received": "Plată primită!",
+    "ready": "Cutia ta este gata — apasă pentru a o deschide!",
+    "guaranteed": "✦ Câștigi întotdeauna ceva, nu te lăsăm niciodată fără premiu",
+    "openButton": "🎉 Deschide cutia!",
+    "won": "Ai câștigat!",
+    "codeLabel": "Codul tău de reducere:",
+    "codeCopied": "✓ Copiat!",
+    "codeCopy": "📋 Copiază codul",
+    "codeExpiry": "Valabil 90 de zile — folosește-l la următoarea comandă",
+    "emailContact": "Te vom contacta prin email pentru livrarea premiului.",
+    "another": "← Deschide altă cutie"
+  }
+}

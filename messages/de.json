@@ -1,0 +1,45 @@
+{
+  "nav": {
+    "prizes": "🍎 Apple Preise"
+  },
+  "hero": {
+    "tag": "✦ Nur 4,99€ pro Box",
+    "title1": "Öffne die Box.",
+    "title2": "Gewinne Apple.",
+    "description": "Jede Box verbirgt einen Apple-Preis. iPhone, AirPods, MacBook und vieles mehr. Du gewinnst immer etwas — garantiert."
+  },
+  "checkout": {
+    "discountPlaceholder": "Hast du einen Rabattcode? (z.B. MD-XXXXXXXX)",
+    "payButton": "💳 Mit Karte / Apple Pay / Google Pay bezahlen",
+    "loading": "Laden...",
+    "bitcoinButton": "₿ Mit Bitcoin bezahlen",
+    "bitcoinAmount": "Sende genau",
+    "bitcoinAddress": "an diese Adresse:",
+    "bitcoinEmail": "Sende uns nach der Zahlung den Beleg an",
+    "bitcoinActivation": "wir aktivieren deine Box innerhalb von 24h.",
+    "codeError": "Ungültiger oder abgelaufener Code"
+  },
+  "prizes": {
+    "label": "Die Preise",
+    "title": "Was du gewinnen kannst"
+  },
+  "footer": {
+    "odds": "Gewinnwahrscheinlichkeiten",
+    "copyright": "© 2025 MysteryDrop",
+    "legal": "Service nur für Volljährige. Jede Box enthält einen garantierten Preis."
+  },
+  "success": {
+    "preparing": "Dein Preis wird vorbereitet...",
+    "received": "Zahlung erhalten!",
+    "ready": "Deine Box ist bereit — klicke zum Öffnen!",
+    "guaranteed": "✦ Du gewinnst immer etwas, wir lassen dich nie ohne Preis",
+    "openButton": "🎉 Box öffnen!",
+    "won": "Du hast gewonnen!",
+    "codeLabel": "Dein Rabattcode:",
+    "codeCopied": "✓ Kopiert!",
+    "codeCopy": "📋 Code kopieren",
+    "codeExpiry": "90 Tage gültig — beim nächsten Kauf einlösen",
+    "emailContact": "Wir werden dich per E-Mail für die Lieferung des Preises kontaktieren.",
+    "another": "← Weitere Box öffnen"
+  }
+}

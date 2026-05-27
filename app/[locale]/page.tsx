@@ -1,12 +1,38 @@
 "use client";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
+import { usePathname } from "next/navigation";
+
+const locales = [
+  { code: "it", label: "🇮🇹 IT" },
+  { code: "en", label: "🇬🇧 EN" },
+  { code: "fr", label: "🇫🇷 FR" },
+  { code: "es", label: "🇪🇸 ES" },
+  { code: "de", label: "🇩🇪 DE" },
+  { code: "pt", label: "🇧🇷 PT" },
+  { code: "ro", label: "🇷🇴 RO" },
+  { code: "pl", label: "🇵🇱 PL" },
+  { code: "sr", label: "🇷🇸 SR" },
+  { code: "hr", label: "🇭🇷 HR" },
+  { code: "uk", label: "🇺🇦 UK" },
+  { code: "ar", label: "🇸🇦 AR" },
+];
 
 export default function Home() {
+  const pathname = usePathname();
+  const locale = pathname.split("/")[1] || "it";
+  const t = useTranslations();
   const [loading, setLoading] = useState(false);
   const [showCrypto, setShowCrypto] = useState(false);
   const [discountCode, setDiscountCode] = useState("");
   const [codeError, setCodeError] = useState("");
   const btcAddress = process.env.NEXT_PUBLIC_BTC_ADDRESS;
+
+  function changeLocale(newLocale: string) {
+    const segments = pathname.split("/");
+    segments[1] = newLocale;
+    window.location.href = segments.join("/");
+  }
 
   async function handleStripe() {
     setLoading(true);
@@ -18,7 +44,7 @@ export default function Home() {
     });
     const data = await res.json();
     if (data.error) {
-      setCodeError(data.error);
+      setCodeError(t("checkout.codeError"));
       setLoading(false);
       return;
     }
@@ -29,21 +55,32 @@ export default function Home() {
     <main style={{ background: "#0a0a0f", minHeight: "100vh", color: "#f0eee8", fontFamily: "sans-serif" }}>
 
       {/* NAV */}
-      <nav style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "1.2rem 2rem", borderBottom: "0.5px solid rgba(255,255,255,0.08)" }}>
+      <nav style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "1.2rem 2rem", borderBottom: "0.5px solid rgba(255,255,255,0.08)", flexWrap: "wrap", gap: "0.5rem" }}>
         <div style={{ fontWeight: 800, fontSize: "1.3rem", color: "#f5c842" }}>Mystery<span style={{ color: "#f0eee8" }}>Drop</span></div>
-        <div style={{ background: "#f5c842", color: "#000", fontSize: "11px", fontWeight: 700, padding: "4px 12px", borderRadius: "20px" }}>🍎 Premi Apple</div>
+        <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", flexWrap: "wrap" }}>
+          <div style={{ background: "#f5c842", color: "#000", fontSize: "11px", fontWeight: 700, padding: "4px 12px", borderRadius: "20px" }}>{t("nav.prizes")}</div>
+          <select
+            onChange={(e) => changeLocale(e.target.value)}
+            defaultValue={locale}
+            style={{ background: "#13131a", border: "0.5px solid rgba(255,255,255,0.15)", color: "#f0eee8", padding: "6px 10px", borderRadius: "8px", fontSize: "0.85rem", cursor: "pointer", outline: "none" }}
+          >
+            {locales.map((l) => (
+              <option key={l.code} value={l.code}>{l.label}</option>
+            ))}
+          </select>
+        </div>
       </nav>
 
       {/* HERO */}
       <section style={{ textAlign: "center", padding: "5rem 2rem 3rem" }}>
         <div style={{ display: "inline-block", background: "rgba(245,200,66,0.12)", border: "0.5px solid rgba(245,200,66,0.35)", color: "#f5c842", fontSize: "12px", padding: "5px 14px", borderRadius: "20px", marginBottom: "1.5rem" }}>
-          ✦ Solo 4,99€ a box
+          {t("hero.tag")}
         </div>
         <h1 style={{ fontSize: "clamp(2.2rem, 6vw, 4rem)", fontWeight: 800, lineHeight: 1.05, marginBottom: "1rem" }}>
-          Apri la box.<br /><span style={{ color: "#f5c842" }}>Vinci Apple.</span>
+          {t("hero.title1")}<br /><span style={{ color: "#f5c842" }}>{t("hero.title2")}</span>
         </h1>
         <p style={{ color: "#8a8880", maxWidth: "460px", margin: "0 auto 2.5rem", lineHeight: 1.7 }}>
-          Ogni box nasconde un premio Apple. iPhone, AirPods, MacBook e molto altro. Vinci sempre qualcosa — garantito.
+          {t("hero.description")}
         </p>
 
         {/* BOX */}
@@ -55,7 +92,7 @@ export default function Home() {
         <div style={{ maxWidth: "280px", margin: "0 auto 1rem" }}>
           <input
             type="text"
-            placeholder="Hai un codice sconto? (es. MD-XXXXXXXX)"
+            placeholder={t("checkout.discountPlaceholder")}
             value={discountCode}
             onChange={(e) => { setDiscountCode(e.target.value.toUpperCase()); setCodeError(""); }}
             style={{ width: "100%", background: "#13131a", border: codeError ? "1px solid #e24b4a" : "0.5px solid rgba(255,255,255,0.1)", borderRadius: "8px", padding: "10px 14px", color: "#f0eee8", fontSize: "0.85rem", outline: "none", textAlign: "center", letterSpacing: "0.05em" }}
@@ -70,32 +107,31 @@ export default function Home() {
             disabled={loading}
             style={{ background: "#f5c842", color: "#000", fontWeight: 700, fontSize: "1rem", padding: "14px 32px", border: "none", borderRadius: "10px", cursor: "pointer", width: "280px" }}
           >
-            {loading ? "Caricamento..." : "💳 Paga con Carta / Apple Pay / Google Pay"}
+            {loading ? t("checkout.loading") : t("checkout.payButton")}
           </button>
-
           <button
             onClick={() => setShowCrypto(!showCrypto)}
             style={{ background: "transparent", color: "#f5c842", fontWeight: 700, fontSize: "1rem", padding: "14px 32px", border: "1px solid rgba(245,200,66,0.4)", borderRadius: "10px", cursor: "pointer", width: "280px" }}
           >
-            ₿ Paga con Bitcoin
+            {t("checkout.bitcoinButton")}
           </button>
         </div>
 
         {/* CRYPTO PANEL */}
         {showCrypto && (
           <div style={{ background: "#13131a", border: "0.5px solid rgba(255,255,255,0.08)", borderRadius: "14px", padding: "2rem", maxWidth: "400px", margin: "1.5rem auto 0" }}>
-            <p style={{ color: "#8a8880", marginBottom: "1rem", fontSize: "0.9rem" }}>Invia esattamente <strong style={{ color: "#f5c842" }}>0.000079 BTC</strong> (~4,99€) a questo indirizzo:</p>
+            <p style={{ color: "#8a8880", marginBottom: "1rem", fontSize: "0.9rem" }}>{t("checkout.bitcoinAmount")} <strong style={{ color: "#f5c842" }}>0.000079 BTC</strong> (~4,99€) {t("checkout.bitcoinAddress")}</p>
             <div style={{ background: "#0a0a0f", border: "0.5px solid rgba(255,255,255,0.1)", borderRadius: "8px", padding: "0.75rem 1rem", fontFamily: "monospace", fontSize: "0.75rem", wordBreak: "break-all", color: "#f5c842", marginBottom: "1rem" }}>
               {btcAddress}
             </div>
             <button
-              onClick={() => { navigator.clipboard.writeText(btcAddress || ""); alert("Indirizzo copiato!"); }}
+              onClick={() => { navigator.clipboard.writeText(btcAddress || ""); alert("Copied!"); }}
               style={{ background: "transparent", border: "0.5px solid rgba(255,255,255,0.15)", color: "#8a8880", padding: "8px 20px", borderRadius: "8px", cursor: "pointer", fontSize: "0.85rem" }}
             >
-              📋 Copia indirizzo
+              📋 Copy
             </button>
             <p style={{ color: "#8a8880", fontSize: "0.78rem", marginTop: "1rem", lineHeight: 1.6 }}>
-              Dopo il pagamento inviaci la ricevuta a <strong style={{ color: "#f0eee8" }}>support@mysterydrop.it</strong> — attiveremo la tua box entro 24h.
+              {t("checkout.bitcoinEmail")} <strong style={{ color: "#f0eee8" }}>support@mysterydrop.eu</strong> — {t("checkout.bitcoinActivation")}
             </p>
           </div>
         )}
@@ -103,8 +139,8 @@ export default function Home() {
 
       {/* PREMI */}
       <section style={{ padding: "3rem 2rem", maxWidth: "900px", margin: "0 auto" }}>
-        <p style={{ fontSize: "11px", letterSpacing: "0.15em", textTransform: "uppercase", color: "#8a8880", marginBottom: "0.5rem" }}>I premi</p>
-        <h2 style={{ fontWeight: 800, fontSize: "2rem", marginBottom: "2rem" }}>Cosa puoi vincere</h2>
+        <p style={{ fontSize: "11px", letterSpacing: "0.15em", textTransform: "uppercase", color: "#8a8880", marginBottom: "0.5rem" }}>{t("prizes.label")}</p>
+        <h2 style={{ fontWeight: 800, fontSize: "2rem", marginBottom: "2rem" }}>{t("prizes.title")}</h2>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: "1rem" }}>
           {[
             { icon: "📱", name: "iPhone 16", val: "999€" },
@@ -126,10 +162,10 @@ export default function Home() {
       {/* FOOTER */}
       <footer style={{ textAlign: "center", padding: "2.5rem 2rem", borderTop: "0.5px solid rgba(255,255,255,0.08)", fontSize: "0.8rem", color: "#8a8880", marginTop: "3rem" }}>
         <p style={{ marginBottom: "0.5rem" }}>
-          <a href="/probabilita" style={{ color: "#8a8880", textDecoration: "none", borderBottom: "0.5px solid rgba(255,255,255,0.15)" }}>Probabilità di vincita</a>
+          <a href={`/${locale}/probabilita`} style={{ color: "#8a8880", textDecoration: "none", borderBottom: "0.5px solid rgba(255,255,255,0.15)" }}>{t("footer.odds")}</a>
         </p>
-        <p>© 2025 MysteryDrop</p>
-        <p style={{ marginTop: "0.5rem" }}>Il servizio è riservato ai maggiorenni. Ogni box contiene un premio garantito.</p>
+        <p>{t("footer.copyright")}</p>
+        <p style={{ marginTop: "0.5rem" }}>{t("footer.legal")}</p>
       </footer>
 
       <style>{`

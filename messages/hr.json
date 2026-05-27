@@ -1,0 +1,45 @@
+{
+  "nav": {
+    "prizes": "🍎 Apple nagrade"
+  },
+  "hero": {
+    "tag": "✦ Samo 4,99€ po kutiji",
+    "title1": "Otvori kutiju.",
+    "title2": "Osvoji Apple.",
+    "description": "Svaka kutija krije Apple nagradu. iPhone, AirPods, MacBook i još mnogo toga. Uvijek nešto osvajate — zajamčeno."
+  },
+  "checkout": {
+    "discountPlaceholder": "Imate kod za popust? (npr. MD-XXXXXXXX)",
+    "payButton": "💳 Platite karticom / Apple Pay / Google Pay",
+    "loading": "Učitavanje...",
+    "bitcoinButton": "₿ Platite Bitcoinom",
+    "bitcoinAmount": "Pošaljite točno",
+    "bitcoinAddress": "na ovu adresu:",
+    "bitcoinEmail": "Nakon plaćanja pošaljite nam potvrdu na",
+    "bitcoinActivation": "aktivirat ćemo vašu kutiju u roku od 24h.",
+    "codeError": "Nevažeći ili istekli kod"
+  },
+  "prizes": {
+    "label": "Nagrade",
+    "title": "Što možete osvojiti"
+  },
+  "footer": {
+    "odds": "Šanse za pobjedu",
+    "copyright": "© 2025 MysteryDrop",
+    "legal": "Usluga je rezervirana za punoljetne. Svaka kutija sadrži zajamčenu nagradu."
+  },
+  "success": {
+    "preparing": "Pripremamo vašu nagradu...",
+    "received": "Plaćanje primljeno!",
+    "ready": "Vaša kutija je spremna — kliknite da je otvorite!",
+    "guaranteed": "✦ Uvijek nešto osvajate, nikada vas ne ostavljamo bez nagrade",
+    "openButton": "🎉 Otvori kutiju!",
+    "won": "Pobijedili ste!",
+    "codeLabel": "Vaš kod za popust:",
+    "codeCopied": "✓ Kopirano!",
+    "codeCopy": "📋 Kopiraj kod",
+    "codeExpiry": "Vrijedi 90 dana — koristite ga pri sljedećoj kupnji",
+    "emailContact": "Kontaktirat ćemo vas putem emaila za dostavu nagrade.",
+    "another": "← Otvori drugu kutiju"
+  }
+}
