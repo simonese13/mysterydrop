@@ -84,7 +84,7 @@ function MagicBox() {
         @keyframes flyOut {
           0% { opacity: 1; transform: translate(0, 0) rotate(0deg) scale(0.5); }
           50% { opacity: 1; }
-          100% { opacity: 0; transform: translate(${Math.random() * 160 - 80}px, ${-(Math.random() * 100 + 60)}px) rotate(${Math.random() * 60 - 30}deg) scale(1.2); }
+          100% { opacity: 0; transform: translate(60px, -100px) rotate(20deg) scale(1.2); }
         }
         @keyframes boxPop {
           0% { transform: scale(1); }
@@ -340,8 +340,9 @@ export default function Home() {
 
       {/* FOOTER */}
       <footer style={{ textAlign: "center", padding: "2.5rem 2rem", borderTop: "0.5px solid rgba(255,255,255,0.08)", fontSize: "0.8rem", color: "#8a8880", marginTop: "3rem" }}>
-        <p style={{ marginBottom: "0.5rem" }}>
+        <p style={{ marginBottom: "0.5rem", display: "flex", gap: "1.5rem", justifyContent: "center", flexWrap: "wrap" }}>
           <a href={`/${locale}/probabilita`} style={{ color: "#8a8880", textDecoration: "none", borderBottom: "0.5px solid rgba(255,255,255,0.15)" }}>{t("footer.odds")}</a>
+          <a href={`/${locale}/recensioni`} style={{ color: "#8a8880", textDecoration: "none", borderBottom: "0.5px solid rgba(255,255,255,0.15)" }}>⭐ Recensioni</a>
         </p>
         <p>{t("footer.copyright")}</p>
         <p style={{ marginTop: "0.5rem" }}>{t("footer.legal")}</p>
