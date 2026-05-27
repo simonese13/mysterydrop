@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 
@@ -17,7 +17,162 @@ const locales = [
   { code: "uk", label: "🇺🇦 UK" },
   { code: "ar", label: "🇸🇦 AR" },
 ];
+const liveWins = [
+  { name: "Marco", city: "Roma", prize: "AirPods Pro", time: 2 },
+  { name: "Sofia", city: "Milano", prize: "Box Scontata", time: 5 },
+  { name: "Luca", city: "Napoli", prize: "iPhone 16", time: 8 },
+  { name: "Emma", city: "Torino", prize: "Buono Amazon 20€", time: 12 },
+  { name: "Giulia", city: "Firenze", prize: "Mystery Box Gratis", time: 15 },
+  { name: "Andrea", city: "Bologna", prize: "AirPods Pro", time: 18 },
+  { name: "Sara", city: "Palermo", prize: "Buono Amazon 50€", time: 22 },
+  { name: "Matteo", city: "Venezia", prize: "Box Scontata", time: 25 },
+];
+const floatingItems = ["📱", "🎧", "⌚", "💻", "🖥", "🎁", "💰", "🛍️"];
 
+function MagicBox() {
+  const [items, setItems] = useState<{ id: number; icon: string; x: number; y: number; rot: number }[]>([]);
+  const [isOpen, setIsOpen] = useState(false);
+  const counter = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsOpen(true);
+      setTimeout(() => setIsOpen(false), 300);
+      setItems((prev) => [
+        ...prev.slice(-8),
+        {
+          id: Date.now(),
+          icon: floatingItems[Math.floor(Math.random() * floatingItems.length)],
+          x: Math.random() * 160 - 80,
+          y: -(Math.random() * 80 + 40),
+          rot: Math.random() * 60 - 30,
+        },
+      ]);
+    }, 1200);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div style={{ position: "relative", width: "200px", height: "200px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+      {items.map((item) => (
+        <div
+          key={item.id}
+          style={{
+            position: "absolute",
+            fontSize: "1.8rem",
+            left: "50%",
+            top: "50%",
+            transform: `translate(${item.x}px, ${item.y}px) rotate(${item.rot}deg)`,
+            animation: "flyOut 1.2s ease-out forwards",
+            pointerEvents: "none",
+          }}
+        >
+          {item.icon}
+        </div>
+      ))}
+
+      <div style={{
+        fontSize: "7rem",
+        animation: isOpen ? "boxPop 0.3s ease-out" : "float 3s ease-in-out infinite",
+        filter: "drop-shadow(0 0 20px rgba(245,200,66,0.4))",
+        transition: "transform 0.1s",
+      }}>
+        {isOpen ? "📦" : "🎁"}
+      </div>
+
+      <style>{`
+        @keyframes flyOut {
+          0% { opacity: 1; transform: translate(0, 0) rotate(0deg) scale(0.5); }
+          50% { opacity: 1; }
+          100% { opacity: 0; transform: translate(${Math.random() * 160 - 80}px, ${-(Math.random() * 100 + 60)}px) rotate(${Math.random() * 60 - 30}deg) scale(1.2); }
+        }
+        @keyframes boxPop {
+          0% { transform: scale(1); }
+          50% { transform: scale(1.15) rotate(-5deg); }
+          100% { transform: scale(1); }
+        }
+      `}</style>
+    </div>
+  );
+}
+function LiveFeed() {
+  const [current, setCurrent] = useState(0);
+  const [visible, setVisible] = useState(true);
+  const [onlineCount, setOnlineCount] = useState(80);
+const [boxCount, setBoxCount] = useState(800);
+
+useEffect(() => {
+  setOnlineCount(Math.floor(Math.random() * 40) + 80);
+  setBoxCount(Math.floor(Math.random() * 200) + 800);
+}, []);
+  const [timeLeft, setTimeLeft] = useState(3600);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setVisible(false);
+      setTimeout(() => {
+        setCurrent((c) => (c + 1) % liveWins.length);
+        setVisible(true);
+      }, 500);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft((t) => (t > 0 ? t - 1 : 3599));
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const hours = Math.floor(timeLeft / 3600);
+  const minutes = Math.floor((timeLeft % 3600) / 60);
+  const seconds = timeLeft % 60;
+  const win = liveWins[current];
+
+  return (
+    <div style={{ background: "#13131a", borderBottom: "0.5px solid rgba(255,255,255,0.06)" }}>
+      {/* COUNTDOWN */}
+      <div style={{ background: "rgba(245,200,66,0.08)", borderBottom: "0.5px solid rgba(245,200,66,0.15)", padding: "8px 2rem", display: "flex", alignItems: "center", justifyContent: "center", gap: "1rem", flexWrap: "wrap" }}>
+        <span style={{ color: "#f5c842", fontSize: "12px", fontWeight: 600 }}>⏰ Offerta speciale termina tra:</span>
+        <div style={{ display: "flex", gap: "0.5rem" }}>
+          {[
+            { val: String(hours).padStart(2, "0"), label: "ore" },
+            { val: String(minutes).padStart(2, "0"), label: "min" },
+            { val: String(seconds).padStart(2, "0"), label: "sec" },
+          ].map((t) => (
+            <div key={t.label} style={{ background: "#0a0a0f", border: "0.5px solid rgba(245,200,66,0.3)", borderRadius: "6px", padding: "4px 8px", textAlign: "center", minWidth: "44px" }}>
+              <div style={{ color: "#f5c842", fontSize: "16px", fontWeight: 800, lineHeight: 1 }}>{t.val}</div>
+              <div style={{ color: "#8a8880", fontSize: "9px", marginTop: "2px" }}>{t.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* STATS + LIVE */}
+      <div style={{ padding: "10px 2rem", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "0.5rem" }}>
+        <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "6px", fontSize: "12px", color: "#8a8880" }}>
+            <span style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#63d96b", display: "inline-block", animation: "pulse 2s infinite" }}></span>
+            <strong style={{ color: "#f0eee8" }}>{onlineCount}</strong> online ora
+          </div>
+          <div style={{ fontSize: "12px", color: "#8a8880" }}>
+            <strong style={{ color: "#f0eee8" }}>{boxCount}</strong> box aperte oggi
+          </div>
+        </div>
+
+        <div style={{ transition: "opacity 0.5s", opacity: visible ? 1 : 0, display: "flex", alignItems: "center", gap: "8px", fontSize: "12px", background: "rgba(99,217,107,0.08)", border: "0.5px solid rgba(99,217,107,0.2)", borderRadius: "20px", padding: "4px 12px" }}>
+          <span>🎉</span>
+          <span style={{ color: "#f0eee8" }}><strong>{win.name}</strong> da {win.city}</span>
+          <span style={{ color: "#8a8880" }}>ha vinto</span>
+          <span style={{ color: "#f5c842", fontWeight: 600 }}>{win.prize}</span>
+          <span style={{ color: "#8a8880" }}>{win.time}m fa</span>
+        </div>
+      </div>
+      <style>{`@keyframes pulse { 0%,100%{opacity:1}50%{opacity:0.4} }`}</style>
+    </div>
+  );
+}
 export default function Home() {
   const pathname = usePathname();
   const locale = pathname.split("/")[1] || "it";
@@ -70,7 +225,8 @@ export default function Home() {
           </select>
         </div>
       </nav>
-
+{/* LIVE FEED */}
+      <LiveFeed />
       {/* HERO */}
       <section style={{ textAlign: "center", padding: "5rem 2rem 3rem" }}>
         <div style={{ display: "inline-block", background: "rgba(245,200,66,0.12)", border: "0.5px solid rgba(245,200,66,0.35)", color: "#f5c842", fontSize: "12px", padding: "5px 14px", borderRadius: "20px", marginBottom: "1.5rem" }}>
@@ -83,9 +239,9 @@ export default function Home() {
           {t("hero.description")}
         </p>
 
-        {/* BOX */}
-        <div style={{ display: "flex", justifyContent: "center", margin: "2rem auto" }}>
-          <div style={{ fontSize: "8rem", animation: "float 3s ease-in-out infinite", cursor: "pointer" }} onClick={handleStripe}>🎁</div>
+        {/* BOX ANIMATA */}
+        <div style={{ display: "flex", justifyContent: "center", margin: "2rem auto", position: "relative", height: "200px", width: "200px", cursor: "pointer" }} onClick={handleStripe}>
+          <MagicBox />
         </div>
 
         {/* CODICE SCONTO */}
