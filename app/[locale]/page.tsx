@@ -116,7 +116,16 @@ export default function Home() {
             {t("checkout.bitcoinButton")}
           </button>
         </div>
-
+{/* TRUST BADGES PAGAMENTO */}
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.75rem", flexWrap: "wrap", marginTop: "1.25rem", opacity: 0.7 }}>
+          {["VISA", "MC", "AMEX"].map((b) => (
+            <div key={b} style={{ background: "#fff", color: "#000", fontSize: "9px", fontWeight: 800, padding: "4px 8px", borderRadius: "4px", letterSpacing: "0.05em" }}>{b}</div>
+          ))}
+          <div style={{ background: "#000", color: "#fff", fontSize: "9px", fontWeight: 800, padding: "4px 8px", borderRadius: "4px" }}>Apple Pay</div>
+          <div style={{ background: "#4285f4", color: "#fff", fontSize: "9px", fontWeight: 800, padding: "4px 8px", borderRadius: "4px" }}>G Pay</div>
+          <div style={{ background: "#f7931a", color: "#fff", fontSize: "9px", fontWeight: 800, padding: "4px 8px", borderRadius: "4px" }}>₿ BTC</div>
+          <div style={{ display: "flex", alignItems: "center", gap: "4px", color: "#63d96b", fontSize: "11px" }}>🔒 SSL</div>
+        </div>
         {/* CRYPTO PANEL */}
         {showCrypto && (
           <div style={{ background: "#13131a", border: "0.5px solid rgba(255,255,255,0.08)", borderRadius: "14px", padding: "2rem", maxWidth: "400px", margin: "1.5rem auto 0" }}>
@@ -136,7 +145,21 @@ export default function Home() {
           </div>
         )}
       </section>
-
+{/* TRUST STRIP */}
+      <div style={{ background: "#13131a", borderTop: "0.5px solid rgba(255,255,255,0.06)", borderBottom: "0.5px solid rgba(255,255,255,0.06)", padding: "1.25rem 2rem", display: "flex", alignItems: "center", justifyContent: "center", gap: "2rem", flexWrap: "wrap", margin: "2rem 0" }}>
+        {[
+          { icon: "🔒", text: "Pagamento sicuro SSL" },
+          { icon: "✅", text: "Premio garantito" },
+          { icon: "🚀", text: "Spedizione gratuita" },
+          { icon: "↩️", text: "Rimborso 30 giorni" },
+          { icon: "⭐", text: "4.8/5 clienti soddisfatti" },
+        ].map((item) => (
+          <div key={item.text} style={{ display: "flex", alignItems: "center", gap: "6px", fontSize: "0.82rem", color: "#8a8880" }}>
+            <span>{item.icon}</span>
+            <span>{item.text}</span>
+          </div>
+        ))}
+      </div>
       {/* PREMI */}
       <section style={{ padding: "3rem 2rem", maxWidth: "900px", margin: "0 auto" }}>
         <p style={{ fontSize: "11px", letterSpacing: "0.15em", textTransform: "uppercase", color: "#8a8880", marginBottom: "0.5rem" }}>{t("prizes.label")}</p>
