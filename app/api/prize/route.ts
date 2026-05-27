@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { supabaseAdmin } from "@/lib/supabase";
+import { sendPrizeEmail, sendAdminNotification } from "@/lib/email";
 
 const prizes = [
   { id: "credit", name: "Box Scontata!", description: "Hai vinto la prossima Mystery Box a soli 2€ invece di 4,99€! Il codice sconto è già pronto per te.", icon: "🎟️", probability: 80 },
@@ -49,6 +50,8 @@ export async function POST(req: Request) {
         .update({ prize_id: prize.id, prize_name: prize.name, status: "completed" })
         .eq("id", order.id);
 
+      let discountCode = null;
+
       if (prize.id === "credit" || prize.id === "box") {
         const code = generateCode();
         const amount = prize.id === "credit" ? 299 : 499;
@@ -60,8 +63,16 @@ export async function POST(req: Request) {
           amount,
         });
 
-        return NextResponse.json({ prize, discountCode: code });
+        discountCode = code;
       }
+
+      const userEmail = email || order.email;
+      if (userEmail) {
+        await sendPrizeEmail(userEmail, prize.name, discountCode);
+      }
+      await sendAdminNotification(userEmail || "Anonimo", prize.name, order.amount);
+
+      return NextResponse.json({ prize, discountCode });
     }
   }
 
