@@ -1,24 +1,37 @@
-import { NextIntlClientProvider } from "next-intl";
-import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+import "./globals.css";
 
-const locales = ["it", "en", "fr", "es", "sr", "hr", "uk", "de", "pt", "ro", "pl", "ar"];
+export const metadata: Metadata = {
+  title: "MysteryDrop — Apri la box, vinci Apple",
+  description: "Ogni box nasconde un premio Apple. iPhone, AirPods, MacBook e molto altro. Vinci sempre qualcosa — garantito. Solo 4,99€.",
+  icons: {
+    icon: "/favicon.svg",
+  },
+  openGraph: {
+    title: "MysteryDrop — Apri la box, vinci Apple",
+    description: "Ogni box nasconde un premio Apple. Solo 4,99€. Vinci sempre qualcosa — garantito.",
+    url: "https://www.mysterydrop.eu",
+    siteName: "MysteryDrop",
+    images: [
+      {
+        url: "https://www.mysterydrop.eu/og-image.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "it_IT",
+    type: "website",
+  },
+};
 
-export default async function LocaleLayout({
+export default function RootLayout({
   children,
-  params,
 }: {
   children: React.ReactNode;
-  params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params;
-
-  if (!locales.includes(locale)) notFound();
-
-  const messages = (await import(`../../messages/${locale}.json`)).default;
-
   return (
-    <NextIntlClientProvider locale={locale} messages={messages}>
-      {children}
-    </NextIntlClientProvider>
+    <html lang="it">
+      <body>{children}</body>
+    </html>
   );
 }
