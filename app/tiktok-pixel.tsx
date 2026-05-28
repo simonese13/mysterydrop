@@ -1,7 +1,10 @@
 "use client";
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export default function TikTokPixel() {
+  const pathname = usePathname();
+
   useEffect(() => {
     const script = document.createElement("script");
     script.innerHTML = `
@@ -13,6 +16,19 @@ export default function TikTokPixel() {
     `;
     document.head.appendChild(script);
   }, []);
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && (window as any).ttq) {
+      (window as any).ttq.page();
+      if (pathname.includes("/success")) {
+        (window as any).ttq.track("Purchase", {
+          contents: [{ content_id: "mystery-box", content_type: "product", content_name: "Mystery Box Apple", price: 4.99, num_items: 1 }],
+          value: 4.99,
+          currency: "EUR",
+        });
+      }
+    }
+  }, [pathname]);
 
   return null;
 }
