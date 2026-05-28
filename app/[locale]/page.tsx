@@ -31,6 +31,21 @@ const liveWins = [
 
 const floatingItems = ["📱", "🎧", "⌚", "💻", "🖥", "🎁", "💰", "🛍️"];
 
+const currencyByLocale: Record<string, { symbol: string; rate: number; code: string }> = {
+  it: { symbol: "€", rate: 1, code: "EUR" },
+  en: { symbol: "€", rate: 1, code: "EUR" },
+  fr: { symbol: "€", rate: 1, code: "EUR" },
+  de: { symbol: "€", rate: 1, code: "EUR" },
+  es: { symbol: "€", rate: 1, code: "EUR" },
+  pt: { symbol: "€", rate: 1, code: "EUR" },
+  pl: { symbol: "zł", rate: 4.25, code: "PLN" },
+  ro: { symbol: "lei", rate: 4.97, code: "RON" },
+  hr: { symbol: "€", rate: 1, code: "EUR" },
+  sr: { symbol: "din", rate: 117, code: "RSD" },
+  uk: { symbol: "₴", rate: 44, code: "UAH" },
+  ar: { symbol: "€", rate: 1, code: "EUR" },
+};
+
 function MagicBox() {
   const [items, setItems] = useState<{ id: number; icon: string; x: number; y: number; rot: number }[]>([]);
   const [isOpen, setIsOpen] = useState(false);
@@ -163,6 +178,12 @@ export default function Home() {
   const [discountCode, setDiscountCode] = useState("");
   const [codeError, setCodeError] = useState("");
   const btcAddress = process.env.NEXT_PUBLIC_BTC_ADDRESS;
+  const currency = currencyByLocale[locale] || currencyByLocale.it;
+
+  function formatPrice(eur: number): string {
+    const converted = eur * currency.rate;
+    return `${currency.symbol}${converted % 1 === 0 ? converted.toFixed(0) : converted.toFixed(2)}`;
+  }
 
   function changeLocale(newLocale: string) {
     const segments = pathname.split("/");
@@ -274,7 +295,7 @@ export default function Home() {
         {/* CRYPTO PANEL */}
         {showCrypto && (
           <div style={{ background: "#13131a", border: "0.5px solid rgba(255,255,255,0.08)", borderRadius: "14px", padding: "2rem", maxWidth: "400px", margin: "1.5rem auto 0" }}>
-            <p style={{ color: "#8a8880", marginBottom: "1rem", fontSize: "0.9rem" }}>{t("checkout.bitcoinAmount")} <strong style={{ color: "#f5c842" }}>0.000079 BTC</strong> (~4,99€) {t("checkout.bitcoinAddress")}</p>
+            <p style={{ color: "#8a8880", marginBottom: "1rem", fontSize: "0.9rem" }}>{t("checkout.bitcoinAmount")} <strong style={{ color: "#f5c842" }}>0.000079 BTC</strong> (~{formatPrice(4.99)}) {t("checkout.bitcoinAddress")}</p>
             <div style={{ background: "#0a0a0f", border: "0.5px solid rgba(255,255,255,0.1)", borderRadius: "8px", padding: "0.75rem 1rem", fontFamily: "monospace", fontSize: "0.75rem", wordBreak: "break-all", color: "#f5c842", marginBottom: "1rem" }}>
               {btcAddress}
             </div>
@@ -325,9 +346,9 @@ export default function Home() {
               <h3 style={{ fontWeight: 800, fontSize: "1.3rem", marginBottom: "0.25rem", color: pkg.color }}>{pkg.name}</h3>
               <p style={{ color: "#8a8880", fontSize: "0.85rem", marginBottom: "1rem" }}>{pkg.boxes} {t("packages.boxes")}</p>
               <div style={{ marginBottom: "1rem" }}>
-                <span style={{ textDecoration: "line-through", color: "#8a8880", fontSize: "0.9rem" }}>€{pkg.original}</span>
-                <div style={{ fontWeight: 800, fontSize: "2rem", color: pkg.color, lineHeight: 1 }}>€{pkg.price}</div>
-                <span style={{ background: "rgba(99,217,107,0.15)", color: "#63d96b", fontSize: "0.78rem", padding: "3px 10px", borderRadius: "20px", fontWeight: 600 }}>{t("packages.save")} €{pkg.savings}</span>
+                <span style={{ textDecoration: "line-through", color: "#8a8880", fontSize: "0.9rem" }}>{formatPrice(pkg.original)}</span>
+                <div style={{ fontWeight: 800, fontSize: "2rem", color: pkg.color, lineHeight: 1 }}>{formatPrice(pkg.price)}</div>
+                <span style={{ background: "rgba(99,217,107,0.15)", color: "#63d96b", fontSize: "0.78rem", padding: "3px 10px", borderRadius: "20px", fontWeight: 600 }}>{t("packages.save")} {formatPrice(pkg.savings)}</span>
               </div>
               <div style={{ color: "#8a8880", fontSize: "0.82rem", marginBottom: "1.25rem", lineHeight: 1.7 }}>
                 ✓ {pkg.boxes} {t("packages.feature1")}<br />
@@ -343,18 +364,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PREMI */}
+      {/* SORPRESE */}
       <section style={{ padding: "3rem 2rem", maxWidth: "900px", margin: "0 auto" }}>
         <p style={{ fontSize: "11px", letterSpacing: "0.15em", textTransform: "uppercase", color: "#8a8880", marginBottom: "0.5rem" }}>{t("prizes.label")}</p>
         <h2 style={{ fontWeight: 800, fontSize: "2rem", marginBottom: "2rem" }}>{t("prizes.title")}</h2>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: "1rem" }}>
           {[
-            { icon: "📱", name: "iPhone 16", val: "999€" },
-            { icon: "🎧", name: "AirPods Pro", val: "279€" },
-            { icon: "⌚", name: "Apple Watch", val: "429€" },
-            { icon: "💻", name: "MacBook Air", val: "1.299€" },
-            { icon: "🖥", name: "iPad Pro", val: "1.199€" },
-            { icon: "🎁", name: "Gift Card", val: "10-100€" },
+            { icon: "📱", name: "iPhone 16", val: formatPrice(999) },
+            { icon: "🎧", name: "AirPods Pro", val: formatPrice(279) },
+            { icon: "⌚", name: "Apple Watch", val: formatPrice(429) },
+            { icon: "💻", name: "MacBook Air", val: formatPrice(1299) },
+            { icon: "🖥", name: "iPad Pro", val: formatPrice(1199) },
+            { icon: "🎁", name: "Gift Card", val: `${formatPrice(10)}-${formatPrice(100)}` },
           ].map((p) => (
             <div key={p.name} style={{ background: "#13131a", border: "0.5px solid rgba(255,255,255,0.08)", borderRadius: "14px", padding: "1.5rem 1rem", textAlign: "center" }}>
               <div style={{ fontSize: "2.5rem", marginBottom: "0.5rem" }}>{p.icon}</div>
