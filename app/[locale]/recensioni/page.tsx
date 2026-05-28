@@ -1,5 +1,6 @@
 "use client";
 import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 const reviews = [
   { name: "Marco R.", city: "Roma", rating: 5, prize: "AirPods Pro", text: "Non ci credevo ma ho davvero vinto! Gli AirPods sono arrivati in 2 giorni. Servizio fantastico.", date: "2 giorni fa", avatar: "M" },
@@ -26,6 +27,7 @@ function Stars({ rating }: { rating: number }) {
 export default function Recensioni() {
   const pathname = usePathname();
   const locale = pathname.split("/")[1] || "it";
+  const t = useTranslations();
 
   const totalReviews = reviews.length;
   const avgRating = (reviews.reduce((acc, r) => acc + r.rating, 0) / totalReviews).toFixed(1);
@@ -36,7 +38,7 @@ export default function Recensioni() {
       {/* NAV */}
       <nav style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "1.2rem 2rem", borderBottom: "0.5px solid rgba(255,255,255,0.08)" }}>
         <a href={`/${locale}`} style={{ fontWeight: 800, fontSize: "1.3rem", color: "#f5c842", textDecoration: "none" }}>Mystery<span style={{ color: "#f0eee8" }}>Drop</span></a>
-        <a href={`/${locale}`} style={{ color: "#8a8880", fontSize: "0.9rem", textDecoration: "none" }}>← Torna alla home</a>
+        <a href={`/${locale}`} style={{ color: "#8a8880", fontSize: "0.9rem", textDecoration: "none" }}>← {t("footer.odds").includes("Prob") ? "Home" : "Home"}</a>
       </nav>
 
       <div style={{ maxWidth: "900px", margin: "0 auto", padding: "3rem 2rem" }}>
@@ -44,16 +46,16 @@ export default function Recensioni() {
         {/* HEADER */}
         <div style={{ textAlign: "center", marginBottom: "3rem" }}>
           <div style={{ display: "inline-block", background: "rgba(245,200,66,0.12)", border: "0.5px solid rgba(245,200,66,0.35)", color: "#f5c842", fontSize: "12px", padding: "5px 14px", borderRadius: "20px", marginBottom: "1rem" }}>
-            ✦ Recensioni verificate
+            ✦ {t("reviews.label")}
           </div>
-          <h1 style={{ fontWeight: 800, fontSize: "2.5rem", marginBottom: "1rem" }}>Cosa dicono i nostri clienti</h1>
+          <h1 style={{ fontWeight: 800, fontSize: "2.5rem", marginBottom: "1rem" }}>{t("reviews.title")}</h1>
 
           {/* RATING SUMMARY */}
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1.5rem", flexWrap: "wrap", marginTop: "1.5rem" }}>
             <div style={{ textAlign: "center" }}>
               <div style={{ fontWeight: 800, fontSize: "4rem", color: "#f5c842", lineHeight: 1 }}>{avgRating}</div>
               <Stars rating={5} />
-              <div style={{ color: "#8a8880", fontSize: "0.85rem", marginTop: "4px" }}>{totalReviews} recensioni</div>
+              <div style={{ color: "#8a8880", fontSize: "0.85rem", marginTop: "4px" }}>{totalReviews} {t("reviews.totalReviews")}</div>
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
               {[5, 4, 3, 2, 1].map((s) => {
@@ -77,7 +79,7 @@ export default function Recensioni() {
         {/* REVIEWS GRID */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "1rem" }}>
           {reviews.map((r, i) => (
-            <div key={i} style={{ background: "#13131a", border: "0.5px solid rgba(255,255,255,0.08)", borderRadius: "14px", padding: "1.5rem", display: "flex", flexDirection: "column", gap: "0.75rem", transition: "border-color 0.2s" }}>
+            <div key={i} style={{ background: "#13131a", border: "0.5px solid rgba(255,255,255,0.08)", borderRadius: "14px", padding: "1.5rem", display: "flex", flexDirection: "column", gap: "0.75rem" }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
                   <div style={{ width: "40px", height: "40px", borderRadius: "50%", background: "linear-gradient(135deg, #7c5cfc, #f5c842)", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700, fontSize: "16px", color: "#000" }}>
@@ -93,7 +95,7 @@ export default function Recensioni() {
               <Stars rating={r.rating} />
               <p style={{ color: "#c0bdb8", fontSize: "0.88rem", lineHeight: 1.6, margin: 0 }}>"{r.text}"</p>
               <div style={{ display: "inline-block", background: "rgba(245,200,66,0.1)", border: "0.5px solid rgba(245,200,66,0.2)", color: "#f5c842", fontSize: "0.75rem", padding: "3px 10px", borderRadius: "20px", alignSelf: "flex-start" }}>
-                🏆 Ha vinto: {r.prize}
+                🏆 {t("reviews.wonLabel")} {r.prize}
               </div>
             </div>
           ))}
@@ -101,9 +103,9 @@ export default function Recensioni() {
 
         {/* CTA */}
         <div style={{ textAlign: "center", marginTop: "3rem" }}>
-          <p style={{ color: "#8a8880", marginBottom: "1.5rem" }}>Unisciti a migliaia di vincitori soddisfatti!</p>
+          <p style={{ color: "#8a8880", marginBottom: "1.5rem" }}>{t("reviews.cta")}</p>
           <a href={`/${locale}`} style={{ background: "#f5c842", color: "#000", fontWeight: 700, fontSize: "1rem", padding: "14px 40px", borderRadius: "10px", textDecoration: "none", display: "inline-block" }}>
-            🎁 Apri la tua box ora →
+            {t("reviews.ctaButton")}
           </a>
         </div>
       </div>
