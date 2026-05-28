@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import TikTokPixel from "./tiktok-pixel";
 
 export const metadata: Metadata = {
   title: "MysteryDrop — Apri la box, vinci Apple",
@@ -23,7 +24,10 @@ export default function RootLayout({
 }) {
   return (
     <html>
-      <body>{children}</body>
+      <body>
+        <TikTokPixel />
+        {children}
+      </body>
     </html>
   );
 }
