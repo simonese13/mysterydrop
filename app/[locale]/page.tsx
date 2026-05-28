@@ -17,6 +17,7 @@ const locales = [
   { code: "uk", label: "🇺🇦 UK" },
   { code: "ar", label: "🇸🇦 AR" },
 ];
+
 const liveWins = [
   { name: "Marco", city: "Roma", prize: "AirPods Pro", time: 2 },
   { name: "Sofia", city: "Milano", prize: "Box Scontata", time: 5 },
@@ -27,12 +28,12 @@ const liveWins = [
   { name: "Sara", city: "Palermo", prize: "Buono Amazon 50€", time: 22 },
   { name: "Matteo", city: "Venezia", prize: "Box Scontata", time: 25 },
 ];
+
 const floatingItems = ["📱", "🎧", "⌚", "💻", "🖥", "🎁", "💰", "🛍️"];
 
 function MagicBox() {
   const [items, setItems] = useState<{ id: number; icon: string; x: number; y: number; rot: number }[]>([]);
   const [isOpen, setIsOpen] = useState(false);
-  const counter = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -55,31 +56,13 @@ function MagicBox() {
   return (
     <div style={{ position: "relative", width: "200px", height: "200px", display: "flex", alignItems: "center", justifyContent: "center" }}>
       {items.map((item) => (
-        <div
-          key={item.id}
-          style={{
-            position: "absolute",
-            fontSize: "1.8rem",
-            left: "50%",
-            top: "50%",
-            transform: `translate(${item.x}px, ${item.y}px) rotate(${item.rot}deg)`,
-            animation: "flyOut 1.2s ease-out forwards",
-            pointerEvents: "none",
-          }}
-        >
+        <div key={item.id} style={{ position: "absolute", fontSize: "1.8rem", left: "50%", top: "50%", transform: `translate(${item.x}px, ${item.y}px) rotate(${item.rot}deg)`, animation: "flyOut 1.2s ease-out forwards", pointerEvents: "none" }}>
           {item.icon}
         </div>
       ))}
-
-      <div style={{
-        fontSize: "7rem",
-        animation: isOpen ? "boxPop 0.3s ease-out" : "float 3s ease-in-out infinite",
-        filter: "drop-shadow(0 0 20px rgba(245,200,66,0.4))",
-        transition: "transform 0.1s",
-      }}>
+      <div style={{ fontSize: "7rem", animation: isOpen ? "boxPop 0.3s ease-out" : "float 3s ease-in-out infinite", filter: "drop-shadow(0 0 20px rgba(245,200,66,0.4))", transition: "transform 0.1s" }}>
         {isOpen ? "📦" : "🎁"}
       </div>
-
       <style>{`
         @keyframes flyOut {
           0% { opacity: 1; transform: translate(0, 0) rotate(0deg) scale(0.5); }
@@ -95,17 +78,18 @@ function MagicBox() {
     </div>
   );
 }
+
 function LiveFeed() {
   const [current, setCurrent] = useState(0);
   const [visible, setVisible] = useState(true);
   const [onlineCount, setOnlineCount] = useState(80);
-const [boxCount, setBoxCount] = useState(800);
-
-useEffect(() => {
-  setOnlineCount(Math.floor(Math.random() * 40) + 80);
-  setBoxCount(Math.floor(Math.random() * 200) + 800);
-}, []);
+  const [boxCount, setBoxCount] = useState(800);
   const [timeLeft, setTimeLeft] = useState(3600);
+
+  useEffect(() => {
+    setOnlineCount(Math.floor(Math.random() * 40) + 80);
+    setBoxCount(Math.floor(Math.random() * 200) + 800);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -132,7 +116,6 @@ useEffect(() => {
 
   return (
     <div style={{ background: "#13131a", borderBottom: "0.5px solid rgba(255,255,255,0.06)" }}>
-      {/* COUNTDOWN */}
       <div style={{ background: "rgba(245,200,66,0.08)", borderBottom: "0.5px solid rgba(245,200,66,0.15)", padding: "8px 2rem", display: "flex", alignItems: "center", justifyContent: "center", gap: "1rem", flexWrap: "wrap" }}>
         <span style={{ color: "#f5c842", fontSize: "12px", fontWeight: 600 }}>⏰ Offerta speciale termina tra:</span>
         <div style={{ display: "flex", gap: "0.5rem" }}>
@@ -148,8 +131,6 @@ useEffect(() => {
           ))}
         </div>
       </div>
-
-      {/* STATS + LIVE */}
       <div style={{ padding: "10px 2rem", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "0.5rem" }}>
         <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "6px", fontSize: "12px", color: "#8a8880" }}>
@@ -160,7 +141,6 @@ useEffect(() => {
             <strong style={{ color: "#f0eee8" }}>{boxCount}</strong> box aperte oggi
           </div>
         </div>
-
         <div style={{ transition: "opacity 0.5s", opacity: visible ? 1 : 0, display: "flex", alignItems: "center", gap: "8px", fontSize: "12px", background: "rgba(99,217,107,0.08)", border: "0.5px solid rgba(99,217,107,0.2)", borderRadius: "20px", padding: "4px 12px" }}>
           <span>🎉</span>
           <span style={{ color: "#f0eee8" }}><strong>{win.name}</strong> da {win.city}</span>
@@ -173,6 +153,7 @@ useEffect(() => {
     </div>
   );
 }
+
 export default function Home() {
   const pathname = usePathname();
   const locale = pathname.split("/")[1] || "it";
@@ -206,6 +187,21 @@ export default function Home() {
     window.location.href = data.url;
   }
 
+  async function handlePackage(pkg: string) {
+    setLoading(true);
+    const res = await fetch("/api/checkout", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ package: pkg }),
+    });
+    const data = await res.json();
+    if (data.error) {
+      setLoading(false);
+      return;
+    }
+    window.location.href = data.url;
+  }
+
   return (
     <main style={{ background: "#0a0a0f", minHeight: "100vh", color: "#f0eee8", fontFamily: "sans-serif" }}>
 
@@ -214,19 +210,17 @@ export default function Home() {
         <div style={{ fontWeight: 800, fontSize: "1.3rem", color: "#f5c842" }}>Mystery<span style={{ color: "#f0eee8" }}>Drop</span></div>
         <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", flexWrap: "wrap" }}>
           <div style={{ background: "#f5c842", color: "#000", fontSize: "11px", fontWeight: 700, padding: "4px 12px", borderRadius: "20px" }}>{t("nav.prizes")}</div>
-          <select
-            onChange={(e) => changeLocale(e.target.value)}
-            defaultValue={locale}
-            style={{ background: "#13131a", border: "0.5px solid rgba(255,255,255,0.15)", color: "#f0eee8", padding: "6px 10px", borderRadius: "8px", fontSize: "0.85rem", cursor: "pointer", outline: "none" }}
-          >
+          <select onChange={(e) => changeLocale(e.target.value)} defaultValue={locale} style={{ background: "#13131a", border: "0.5px solid rgba(255,255,255,0.15)", color: "#f0eee8", padding: "6px 10px", borderRadius: "8px", fontSize: "0.85rem", cursor: "pointer", outline: "none" }}>
             {locales.map((l) => (
               <option key={l.code} value={l.code}>{l.label}</option>
             ))}
           </select>
         </div>
       </nav>
-{/* LIVE FEED */}
+
+      {/* LIVE FEED */}
       <LiveFeed />
+
       {/* HERO */}
       <section style={{ textAlign: "center", padding: "5rem 2rem 3rem" }}>
         <div style={{ display: "inline-block", background: "rgba(245,200,66,0.12)", border: "0.5px solid rgba(245,200,66,0.35)", color: "#f5c842", fontSize: "12px", padding: "5px 14px", borderRadius: "20px", marginBottom: "1.5rem" }}>
@@ -258,21 +252,15 @@ export default function Home() {
 
         {/* PULSANTI */}
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "1rem", marginTop: "0.5rem" }}>
-          <button
-            onClick={handleStripe}
-            disabled={loading}
-            style={{ background: "#f5c842", color: "#000", fontWeight: 700, fontSize: "1rem", padding: "14px 32px", border: "none", borderRadius: "10px", cursor: "pointer", width: "280px" }}
-          >
+          <button onClick={handleStripe} disabled={loading} style={{ background: "#f5c842", color: "#000", fontWeight: 700, fontSize: "1rem", padding: "14px 32px", border: "none", borderRadius: "10px", cursor: "pointer", width: "280px" }}>
             {loading ? t("checkout.loading") : t("checkout.payButton")}
           </button>
-          <button
-            onClick={() => setShowCrypto(!showCrypto)}
-            style={{ background: "transparent", color: "#f5c842", fontWeight: 700, fontSize: "1rem", padding: "14px 32px", border: "1px solid rgba(245,200,66,0.4)", borderRadius: "10px", cursor: "pointer", width: "280px" }}
-          >
+          <button onClick={() => setShowCrypto(!showCrypto)} style={{ background: "transparent", color: "#f5c842", fontWeight: 700, fontSize: "1rem", padding: "14px 32px", border: "1px solid rgba(245,200,66,0.4)", borderRadius: "10px", cursor: "pointer", width: "280px" }}>
             {t("checkout.bitcoinButton")}
           </button>
         </div>
-{/* TRUST BADGES PAGAMENTO */}
+
+        {/* TRUST BADGES */}
         <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.75rem", flexWrap: "wrap", marginTop: "1.25rem", opacity: 0.7 }}>
           {["VISA", "MC", "AMEX"].map((b) => (
             <div key={b} style={{ background: "#fff", color: "#000", fontSize: "9px", fontWeight: 800, padding: "4px 8px", borderRadius: "4px", letterSpacing: "0.05em" }}>{b}</div>
@@ -282,6 +270,7 @@ export default function Home() {
           <div style={{ background: "#f7931a", color: "#fff", fontSize: "9px", fontWeight: 800, padding: "4px 8px", borderRadius: "4px" }}>₿ BTC</div>
           <div style={{ display: "flex", alignItems: "center", gap: "4px", color: "#63d96b", fontSize: "11px" }}>🔒 SSL</div>
         </div>
+
         {/* CRYPTO PANEL */}
         {showCrypto && (
           <div style={{ background: "#13131a", border: "0.5px solid rgba(255,255,255,0.08)", borderRadius: "14px", padding: "2rem", maxWidth: "400px", margin: "1.5rem auto 0" }}>
@@ -289,10 +278,7 @@ export default function Home() {
             <div style={{ background: "#0a0a0f", border: "0.5px solid rgba(255,255,255,0.1)", borderRadius: "8px", padding: "0.75rem 1rem", fontFamily: "monospace", fontSize: "0.75rem", wordBreak: "break-all", color: "#f5c842", marginBottom: "1rem" }}>
               {btcAddress}
             </div>
-            <button
-              onClick={() => { navigator.clipboard.writeText(btcAddress || ""); alert("Copied!"); }}
-              style={{ background: "transparent", border: "0.5px solid rgba(255,255,255,0.15)", color: "#8a8880", padding: "8px 20px", borderRadius: "8px", cursor: "pointer", fontSize: "0.85rem" }}
-            >
+            <button onClick={() => { navigator.clipboard.writeText(btcAddress || ""); alert("Copied!"); }} style={{ background: "transparent", border: "0.5px solid rgba(255,255,255,0.15)", color: "#8a8880", padding: "8px 20px", borderRadius: "8px", cursor: "pointer", fontSize: "0.85rem" }}>
               📋 Copy
             </button>
             <p style={{ color: "#8a8880", fontSize: "0.78rem", marginTop: "1rem", lineHeight: 1.6 }}>
@@ -301,7 +287,8 @@ export default function Home() {
           </div>
         )}
       </section>
-{/* TRUST STRIP */}
+
+      {/* TRUST STRIP */}
       <div style={{ background: "#13131a", borderTop: "0.5px solid rgba(255,255,255,0.06)", borderBottom: "0.5px solid rgba(255,255,255,0.06)", padding: "1.25rem 2rem", display: "flex", alignItems: "center", justifyContent: "center", gap: "2rem", flexWrap: "wrap", margin: "2rem 0" }}>
         {[
           { icon: "🔒", text: "Pagamento sicuro SSL" },
@@ -316,6 +303,46 @@ export default function Home() {
           </div>
         ))}
       </div>
+
+      {/* PACCHETTI */}
+      <section style={{ padding: "3rem 2rem", maxWidth: "900px", margin: "0 auto" }}>
+        <p style={{ fontSize: "11px", letterSpacing: "0.15em", textTransform: "uppercase", color: "#8a8880", marginBottom: "0.5rem" }}>Risparmia di più</p>
+        <h2 style={{ fontWeight: 800, fontSize: "2rem", marginBottom: "0.5rem" }}>Pacchetti box</h2>
+        <p style={{ color: "#8a8880", marginBottom: "2rem", fontSize: "0.95rem" }}>Più box compri, più risparmi — apri tutto in una sessione!</p>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "1rem" }}>
+          {[
+            { name: "Silver", icon: "🥈", boxes: 100, original: 499, price: 350, savings: 149, color: "#8a8880", stripe: "silver" },
+            { name: "Gold", icon: "🥇", boxes: 200, original: 998, price: 600, savings: 398, color: "#f5c842", stripe: "gold", popular: true },
+            { name: "Platinum", icon: "💎", boxes: 600, original: 2994, price: 1497, savings: 1497, color: "#7c5cfc", stripe: "platinum" },
+          ].map((pkg) => (
+            <div key={pkg.name} style={{ background: "#13131a", border: `0.5px solid ${pkg.popular ? pkg.color : "rgba(255,255,255,0.08)"}`, borderRadius: "16px", padding: "1.75rem", position: "relative" }}>
+              {pkg.popular && (
+                <div style={{ position: "absolute", top: "-12px", left: "50%", transform: "translateX(-50%)", background: pkg.color, color: "#000", fontSize: "11px", fontWeight: 700, padding: "4px 14px", borderRadius: "20px", whiteSpace: "nowrap" }}>
+                  ⭐ PIÙ POPOLARE
+                </div>
+              )}
+              <div style={{ fontSize: "2.5rem", marginBottom: "0.75rem" }}>{pkg.icon}</div>
+              <h3 style={{ fontWeight: 800, fontSize: "1.3rem", marginBottom: "0.25rem", color: pkg.color }}>{pkg.name}</h3>
+              <p style={{ color: "#8a8880", fontSize: "0.85rem", marginBottom: "1rem" }}>{pkg.boxes} box da aprire in una sessione</p>
+              <div style={{ marginBottom: "1rem" }}>
+                <span style={{ textDecoration: "line-through", color: "#8a8880", fontSize: "0.9rem" }}>€{pkg.original}</span>
+                <div style={{ fontWeight: 800, fontSize: "2rem", color: pkg.color, lineHeight: 1 }}>€{pkg.price}</div>
+                <span style={{ background: "rgba(99,217,107,0.15)", color: "#63d96b", fontSize: "0.78rem", padding: "3px 10px", borderRadius: "20px", fontWeight: 600 }}>Risparmi €{pkg.savings}</span>
+              </div>
+              <div style={{ color: "#8a8880", fontSize: "0.82rem", marginBottom: "1.25rem", lineHeight: 1.7 }}>
+                ✓ {pkg.boxes} box Apple<br />
+                ✓ Slot machine interattiva<br />
+                ✓ Riepilogo premi finale<br />
+                ✓ Spedizione gratuita
+              </div>
+              <button onClick={() => handlePackage(pkg.stripe)} style={{ width: "100%", background: pkg.popular ? pkg.color : "transparent", color: pkg.popular ? "#000" : pkg.color, fontWeight: 700, fontSize: "0.95rem", padding: "12px", border: `1px solid ${pkg.color}`, borderRadius: "10px", cursor: "pointer" }}>
+                Acquista {pkg.name} →
+              </button>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* PREMI */}
       <section style={{ padding: "3rem 2rem", maxWidth: "900px", margin: "0 auto" }}>
         <p style={{ fontSize: "11px", letterSpacing: "0.15em", textTransform: "uppercase", color: "#8a8880", marginBottom: "0.5rem" }}>{t("prizes.label")}</p>
