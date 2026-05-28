@@ -1,12 +1,12 @@
 {
   "nav": {
-    "prizes": "🍎 Premi Apple"
+    "prizes": "🍎 Sorprese Apple"
   },
   "hero": {
     "tag": "✦ Solo 4,99€ a box",
     "title1": "Apri la box.",
-    "title2": "Vinci Apple.",
-    "description": "Ogni box nasconde un premio Apple. iPhone, AirPods, MacBook e molto altro. Vinci sempre qualcosa — garantito."
+    "title2": "Scopri Apple.",
+    "description": "Ogni box nasconde una sorpresa Apple. iPhone, AirPods, MacBook e molto altro. Trovi sempre qualcosa — garantito."
   },
   "checkout": {
     "discountPlaceholder": "Hai un codice sconto? (es. MD-XXXXXXXX)",
@@ -26,12 +26,12 @@
     "seconds": "sec",
     "online": "online ora",
     "boxesToday": "box aperte oggi",
-    "won": "ha vinto",
+    "won": "ha scoperto",
     "ago": "m fa"
   },
   "trust": {
     "ssl": "Pagamento sicuro SSL",
-    "guaranteed": "Premio garantito",
+    "guaranteed": "Sorpresa garantita",
     "shipping": "Spedizione gratuita",
     "refund": "Rimborso 30 giorni",
     "rating": "4.8/5 clienti soddisfatti"
@@ -45,40 +45,40 @@
     "popular": "⭐ PIÙ POPOLARE",
     "feature1": "box Apple",
     "feature2": "Slot machine interattiva",
-    "feature3": "Riepilogo premi finale",
+    "feature3": "Riepilogo scoperte finale",
     "feature4": "Spedizione gratuita",
     "buy": "Acquista"
   },
   "prizes": {
-    "label": "I premi",
-    "title": "Cosa puoi vincere"
+    "label": "Le sorprese",
+    "title": "Cosa puoi scoprire"
   },
   "footer": {
-    "odds": "Probabilità di vincita",
+    "odds": "Probabilità di scoperta",
     "reviews": "⭐ Recensioni",
     "copyright": "© 2025 MysteryDrop",
-    "legal": "Il servizio è riservato ai maggiorenni. Ogni box contiene un premio garantito."
+    "legal": "Il servizio è riservato ai maggiorenni. Ogni box contiene una sorpresa garantita."
   },
   "success": {
-    "preparing": "Preparando il tuo premio...",
+    "preparing": "Preparando la tua sorpresa...",
     "received": "Pagamento ricevuto!",
     "ready": "La tua box è pronta — clicca per aprirla!",
-    "guaranteed": "✦ Vinci sempre qualcosa, non ti lasciamo senza premio",
+    "guaranteed": "✦ Trovi sempre qualcosa, non ti lasciamo senza sorpresa",
     "openButton": "🎉 Apri la box!",
-    "won": "Hai vinto!",
+    "won": "Hai scoperto!",
     "codeLabel": "Il tuo codice sconto:",
     "codeCopied": "✓ Copiato!",
     "codeCopy": "📋 Copia codice",
     "codeExpiry": "Valido per 90 giorni — inseriscilo al prossimo checkout",
-    "emailContact": "Ti contatteremo via email per la consegna del premio.",
+    "emailContact": "Ti contatteremo via email per la consegna della sorpresa.",
     "another": "← Apri un'altra box"
   },
   "reviews": {
     "label": "Recensioni verificate",
     "title": "Cosa dicono i nostri clienti",
     "totalReviews": "recensioni",
-    "cta": "Unisciti a migliaia di vincitori soddisfatti!",
+    "cta": "Unisciti a migliaia di clienti soddisfatti!",
     "ctaButton": "🎁 Apri la tua box ora →",
-    "wonLabel": "Ha vinto:"
+    "wonLabel": "Ha scoperto:"
   }
 }

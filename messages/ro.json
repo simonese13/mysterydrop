@@ -1,12 +1,12 @@
 {
   "nav": {
-    "prizes": "🍎 Premii Apple"
+    "prizes": "🍎 Surprize Apple"
   },
   "hero": {
     "tag": "✦ Doar 4,99€ per cutie",
     "title1": "Deschide cutia.",
-    "title2": "Câștigă Apple.",
-    "description": "Fiecare cutie ascunde un premiu Apple. iPhone, AirPods, MacBook și multe altele. Câștigi întotdeauna ceva — garantat."
+    "title2": "Descoperă Apple.",
+    "description": "Fiecare cutie ascunde o surpriză Apple. iPhone, AirPods, MacBook și multe altele. Găsești întotdeauna ceva — garantat."
   },
   "checkout": {
     "discountPlaceholder": "Ai un cod de reducere? (ex. MD-XXXXXXXX)",
@@ -26,12 +26,12 @@
     "seconds": "sec",
     "online": "online acum",
     "boxesToday": "cutii deschise azi",
-    "won": "a câștigat",
+    "won": "a descoperit",
     "ago": "min în urmă"
   },
   "trust": {
     "ssl": "Plată securizată SSL",
-    "guaranteed": "Premiu garantat",
+    "guaranteed": "Surpriză garantată",
     "shipping": "Livrare gratuită",
     "refund": "Rambursare 30 zile",
     "rating": "4.8/5 clienți mulțumiți"
@@ -45,40 +45,40 @@
     "popular": "⭐ CEL MAI POPULAR",
     "feature1": "cutii Apple",
     "feature2": "Slot machine interactiv",
-    "feature3": "Rezumat final al premiilor",
+    "feature3": "Rezumat final al descoperirilor",
     "feature4": "Livrare gratuită",
     "buy": "Cumpără"
   },
   "prizes": {
-    "label": "Premiile",
-    "title": "Ce poți câștiga"
+    "label": "Surprizele",
+    "title": "Ce poți descoperi"
   },
   "footer": {
-    "odds": "Șanse de câștig",
+    "odds": "Șanse de descoperire",
     "reviews": "⭐ Recenzii",
     "copyright": "© 2025 MysteryDrop",
-    "legal": "Serviciu rezervat persoanelor majore. Fiecare cutie conține un premiu garantat."
+    "legal": "Serviciu rezervat persoanelor majore. Fiecare cutie conține o surpriză garantată."
   },
   "success": {
-    "preparing": "Pregătim premiul tău...",
+    "preparing": "Pregătim surpriza ta...",
     "received": "Plată primită!",
     "ready": "Cutia ta este gata — apasă pentru a o deschide!",
-    "guaranteed": "✦ Câștigi întotdeauna ceva, nu te lăsăm niciodată fără premiu",
+    "guaranteed": "✦ Găsești întotdeauna ceva, nu te lăsăm niciodată fără surpriză",
     "openButton": "🎉 Deschide cutia!",
-    "won": "Ai câștigat!",
+    "won": "Ai descoperit!",
     "codeLabel": "Codul tău de reducere:",
     "codeCopied": "✓ Copiat!",
     "codeCopy": "📋 Copiază codul",
     "codeExpiry": "Valabil 90 de zile — folosește-l la următoarea comandă",
-    "emailContact": "Te vom contacta prin email pentru livrarea premiului.",
+    "emailContact": "Te vom contacta prin email pentru livrarea surprizei.",
     "another": "← Deschide altă cutie"
   },
   "reviews": {
     "label": "Recenzii verificate",
     "title": "Ce spun clienții noștri",
     "totalReviews": "recenzii",
-    "cta": "Alătură-te miilor de câștigători mulțumiți!",
+    "cta": "Alătură-te miilor de clienți mulțumiți!",
     "ctaButton": "🎁 Deschide cutia ta acum →",
-    "wonLabel": "A câștigat:"
+    "wonLabel": "A descoperit:"
   }
 }

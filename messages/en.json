@@ -1,12 +1,12 @@
 {
   "nav": {
-    "prizes": "🍎 Apple Prizes"
+    "prizes": "🍎 Apple Surprises"
   },
   "hero": {
     "tag": "✦ Only €4.99 per box",
     "title1": "Open the box.",
-    "title2": "Win Apple.",
-    "description": "Every box hides an Apple prize. iPhone, AirPods, MacBook and much more. You always win something — guaranteed."
+    "title2": "Discover Apple.",
+    "description": "Every box hides an Apple surprise. iPhone, AirPods, MacBook and much more. You always find something — guaranteed."
   },
   "checkout": {
     "discountPlaceholder": "Have a discount code? (e.g. MD-XXXXXXXX)",
@@ -26,12 +26,12 @@
     "seconds": "sec",
     "online": "online now",
     "boxesToday": "boxes opened today",
-    "won": "won",
+    "won": "discovered",
     "ago": "m ago"
   },
   "trust": {
     "ssl": "Secure SSL payment",
-    "guaranteed": "Guaranteed prize",
+    "guaranteed": "Guaranteed surprise",
     "shipping": "Free shipping",
     "refund": "30-day refund",
     "rating": "4.8/5 satisfied customers"
@@ -45,40 +45,40 @@
     "popular": "⭐ MOST POPULAR",
     "feature1": "Apple boxes",
     "feature2": "Interactive slot machine",
-    "feature3": "Final prize summary",
+    "feature3": "Final discoveries summary",
     "feature4": "Free shipping",
     "buy": "Buy"
   },
   "prizes": {
-    "label": "Prizes",
-    "title": "What you can win"
+    "label": "Surprises",
+    "title": "What you can discover"
   },
   "footer": {
-    "odds": "Winning odds",
+    "odds": "Discovery odds",
     "reviews": "⭐ Reviews",
     "copyright": "© 2025 MysteryDrop",
-    "legal": "Service reserved for adults. Every box contains a guaranteed prize."
+    "legal": "Service reserved for adults. Every box contains a guaranteed surprise."
   },
   "success": {
-    "preparing": "Preparing your prize...",
+    "preparing": "Preparing your surprise...",
     "received": "Payment received!",
     "ready": "Your box is ready — click to open it!",
-    "guaranteed": "✦ You always win something, we never leave you empty handed",
+    "guaranteed": "✦ You always find something, we never leave you empty handed",
     "openButton": "🎉 Open the box!",
-    "won": "You won!",
+    "won": "You discovered!",
     "codeLabel": "Your discount code:",
     "codeCopied": "✓ Copied!",
     "codeCopy": "📋 Copy code",
     "codeExpiry": "Valid for 90 days — use it at your next checkout",
-    "emailContact": "We will contact you by email for prize delivery.",
+    "emailContact": "We will contact you by email for surprise delivery.",
     "another": "← Open another box"
   },
   "reviews": {
     "label": "Verified reviews",
     "title": "What our customers say",
     "totalReviews": "reviews",
-    "cta": "Join thousands of satisfied winners!",
+    "cta": "Join thousands of satisfied customers!",
     "ctaButton": "🎁 Open your box now →",
-    "wonLabel": "Won:"
+    "wonLabel": "Discovered:"
   }
 }

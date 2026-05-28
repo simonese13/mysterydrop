@@ -1,12 +1,12 @@
 {
   "nav": {
-    "prizes": "🍎 Prêmios Apple"
+    "prizes": "🍎 Surpresas Apple"
   },
   "hero": {
     "tag": "✦ Apenas €4,99 por caixa",
     "title1": "Abra a caixa.",
-    "title2": "Ganhe Apple.",
-    "description": "Cada caixa esconde um prêmio Apple. iPhone, AirPods, MacBook e muito mais. Você sempre ganha algo — garantido."
+    "title2": "Descubra Apple.",
+    "description": "Cada caixa esconde uma surpresa Apple. iPhone, AirPods, MacBook e muito mais. Você sempre encontra algo — garantido."
   },
   "checkout": {
     "discountPlaceholder": "Tem um código de desconto? (ex. MD-XXXXXXXX)",
@@ -26,12 +26,12 @@
     "seconds": "seg",
     "online": "online agora",
     "boxesToday": "caixas abertas hoje",
-    "won": "ganhou",
+    "won": "descobriu",
     "ago": "min atrás"
   },
   "trust": {
     "ssl": "Pagamento seguro SSL",
-    "guaranteed": "Prêmio garantido",
+    "guaranteed": "Surpresa garantida",
     "shipping": "Frete grátis",
     "refund": "Reembolso em 30 dias",
     "rating": "4.8/5 clientes satisfeitos"
@@ -45,40 +45,40 @@
     "popular": "⭐ MAIS POPULAR",
     "feature1": "caixas Apple",
     "feature2": "Caça-níqueis interativo",
-    "feature3": "Resumo final dos prêmios",
+    "feature3": "Resumo final das descobertas",
     "feature4": "Frete grátis",
     "buy": "Comprar"
   },
   "prizes": {
-    "label": "Os prêmios",
-    "title": "O que você pode ganhar"
+    "label": "As surpresas",
+    "title": "O que você pode descobrir"
   },
   "footer": {
-    "odds": "Probabilidades de ganhar",
+    "odds": "Probabilidades de descoberta",
     "reviews": "⭐ Avaliações",
     "copyright": "© 2025 MysteryDrop",
-    "legal": "Serviço reservado para maiores de idade. Cada caixa contém um prêmio garantido."
+    "legal": "Serviço reservado para maiores de idade. Cada caixa contém uma surpresa garantida."
   },
   "success": {
-    "preparing": "Preparando seu prêmio...",
+    "preparing": "Preparando sua surpresa...",
     "received": "Pagamento recebido!",
     "ready": "Sua caixa está pronta — clique para abri-la!",
-    "guaranteed": "✦ Você sempre ganha algo, nunca te deixamos sem prêmio",
+    "guaranteed": "✦ Você sempre encontra algo, nunca te deixamos sem surpresa",
     "openButton": "🎉 Abrir a caixa!",
-    "won": "Você ganhou!",
+    "won": "Você descobriu!",
     "codeLabel": "Seu código de desconto:",
     "codeCopied": "✓ Copiado!",
     "codeCopy": "📋 Copiar código",
     "codeExpiry": "Válido por 90 dias — use na próxima compra",
-    "emailContact": "Entraremos em contato por email para a entrega do prêmio.",
+    "emailContact": "Entraremos em contato por email para a entrega da surpresa.",
     "another": "← Abrir outra caixa"
   },
   "reviews": {
     "label": "Avaliações verificadas",
     "title": "O que nossos clientes dizem",
     "totalReviews": "avaliações",
-    "cta": "Junte-se a milhares de vencedores satisfeitos!",
+    "cta": "Junte-se a milhares de clientes satisfeitos!",
     "ctaButton": "🎁 Abra sua caixa agora →",
-    "wonLabel": "Ganhou:"
+    "wonLabel": "Descobriu:"
   }
 }

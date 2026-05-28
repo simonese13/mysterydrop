@@ -1,84 +1,84 @@
 {
   "nav": {
-    "prizes": "🍎 Apple Prizes"
+    "prizes": "🍎 Surprises Apple"
   },
   "hero": {
-    "tag": "✦ Only €4.99 per box",
-    "title1": "Open the box.",
-    "title2": "Win Apple.",
-    "description": "Every box hides an Apple prize. iPhone, AirPods, MacBook and much more. You always win something — guaranteed."
+    "tag": "✦ Seulement 4,99€ par box",
+    "title1": "Ouvre la box.",
+    "title2": "Découvre Apple.",
+    "description": "Chaque box cache une surprise Apple. iPhone, AirPods, MacBook et bien plus. Tu trouves toujours quelque chose — garanti."
   },
   "checkout": {
-    "discountPlaceholder": "Have a discount code? (e.g. MD-XXXXXXXX)",
-    "payButton": "💳 Pay with Card / Apple Pay / Google Pay",
-    "loading": "Loading...",
-    "bitcoinButton": "₿ Pay with Bitcoin",
-    "bitcoinAmount": "Send exactly",
-    "bitcoinAddress": "to this address:",
-    "bitcoinEmail": "After payment send us the receipt at",
-    "bitcoinActivation": "we will activate your box within 24h.",
-    "codeError": "Invalid or expired code"
+    "discountPlaceholder": "Tu as un code de réduction? (ex. MD-XXXXXXXX)",
+    "payButton": "💳 Payer par Carte / Apple Pay / Google Pay",
+    "loading": "Chargement...",
+    "bitcoinButton": "₿ Payer avec Bitcoin",
+    "bitcoinAmount": "Envoie exactement",
+    "bitcoinAddress": "à cette adresse:",
+    "bitcoinEmail": "Après le paiement envoie-nous le reçu à",
+    "bitcoinActivation": "nous activerons ta box dans les 24h.",
+    "codeError": "Code invalide ou expiré"
   },
   "live": {
-    "countdown": "⏰ Special offer ends in:",
+    "countdown": "⏰ L'offre spéciale se termine dans:",
     "hours": "hrs",
     "minutes": "min",
     "seconds": "sec",
-    "online": "online now",
-    "boxesToday": "boxes opened today",
-    "won": "won",
-    "ago": "m ago"
+    "online": "en ligne maintenant",
+    "boxesToday": "box ouvertes aujourd'hui",
+    "won": "a découvert",
+    "ago": "m il y a"
   },
   "trust": {
-    "ssl": "Secure SSL payment",
-    "guaranteed": "Guaranteed prize",
-    "shipping": "Free shipping",
-    "refund": "30-day refund",
-    "rating": "4.8/5 satisfied customers"
+    "ssl": "Paiement sécurisé SSL",
+    "guaranteed": "Surprise garantie",
+    "shipping": "Livraison gratuite",
+    "refund": "Remboursement 30 jours",
+    "rating": "4.8/5 clients satisfaits"
   },
   "packages": {
-    "label": "Save more",
-    "title": "Box packages",
-    "subtitle": "The more boxes you buy, the more you save — open everything in one session!",
-    "boxes": "boxes to open in one session",
-    "save": "You save",
-    "popular": "⭐ MOST POPULAR",
-    "feature1": "Apple boxes",
-    "feature2": "Interactive slot machine",
-    "feature3": "Final prize summary",
-    "feature4": "Free shipping",
-    "buy": "Buy"
+    "label": "Économise plus",
+    "title": "Packs de box",
+    "subtitle": "Plus tu achètes de box, plus tu économises — ouvre tout en une session!",
+    "boxes": "box à ouvrir en une session",
+    "save": "Tu économises",
+    "popular": "⭐ LE PLUS POPULAIRE",
+    "feature1": "box Apple",
+    "feature2": "Machine à sous interactive",
+    "feature3": "Récapitulatif final des découvertes",
+    "feature4": "Livraison gratuite",
+    "buy": "Acheter"
   },
   "prizes": {
-    "label": "Prizes",
-    "title": "What you can win"
+    "label": "Les surprises",
+    "title": "Ce que tu peux découvrir"
   },
   "footer": {
-    "odds": "Winning odds",
-    "reviews": "⭐ Reviews",
+    "odds": "Probabilités de découverte",
+    "reviews": "⭐ Avis",
     "copyright": "© 2025 MysteryDrop",
-    "legal": "Service reserved for adults. Every box contains a guaranteed prize."
+    "legal": "Service réservé aux majeurs. Chaque box contient une surprise garantie."
   },
   "success": {
-    "preparing": "Preparing your prize...",
-    "received": "Payment received!",
-    "ready": "Your box is ready — click to open it!",
-    "guaranteed": "✦ You always win something, we never leave you empty handed",
-    "openButton": "🎉 Open the box!",
-    "won": "You won!",
-    "codeLabel": "Your discount code:",
-    "codeCopied": "✓ Copied!",
-    "codeCopy": "📋 Copy code",
-    "codeExpiry": "Valid for 90 days — use it at your next checkout",
-    "emailContact": "We will contact you by email for prize delivery.",
-    "another": "← Open another box"
+    "preparing": "Préparation de ta surprise...",
+    "received": "Paiement reçu!",
+    "ready": "Ta box est prête — clique pour l'ouvrir!",
+    "guaranteed": "✦ Tu trouves toujours quelque chose, on ne te laisse jamais sans surprise",
+    "openButton": "🎉 Ouvre la box!",
+    "won": "Tu as découvert!",
+    "codeLabel": "Ton code de réduction:",
+    "codeCopied": "✓ Copié!",
+    "codeCopy": "📋 Copier le code",
+    "codeExpiry": "Valable 90 jours — utilise-le au prochain achat",
+    "emailContact": "Nous te contacterons par email pour la livraison de ta surprise.",
+    "another": "← Ouvre une autre box"
   },
   "reviews": {
-    "label": "Verified reviews",
-    "title": "What our customers say",
-    "totalReviews": "reviews",
-    "cta": "Join thousands of satisfied winners!",
-    "ctaButton": "🎁 Open your box now →",
-    "wonLabel": "Won:"
+    "label": "Avis vérifiés",
+    "title": "Ce que disent nos clients",
+    "totalReviews": "avis",
+    "cta": "Rejoins des milliers de clients satisfaits!",
+    "ctaButton": "🎁 Ouvre ta box maintenant →",
+    "wonLabel": "A découvert:"
   }
 }

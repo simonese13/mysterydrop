@@ -1,12 +1,12 @@
 {
   "nav": {
-    "prizes": "🍎 Apple nagrade"
+    "prizes": "🍎 Apple iznenađenja"
   },
   "hero": {
     "tag": "✦ Samo 4,99€ po kutiji",
     "title1": "Otvori kutiju.",
-    "title2": "Osvoji Apple.",
-    "description": "Svaka kutija krije Apple nagradu. iPhone, AirPods, MacBook i još mnogo toga. Uvek nešto osvajate — zagarantovano."
+    "title2": "Otkrij Apple.",
+    "description": "Svaka kutija krije Apple iznenađenje. iPhone, AirPods, MacBook i još mnogo toga. Uvek nešto nađete — zagarantovano."
   },
   "checkout": {
     "discountPlaceholder": "Imate kod za popust? (npr. MD-XXXXXXXX)",
@@ -26,12 +26,12 @@
     "seconds": "sek",
     "online": "online sada",
     "boxesToday": "kutija otvorenih danas",
-    "won": "osvojio",
+    "won": "otkrio",
     "ago": "min pre"
   },
   "trust": {
     "ssl": "Sigurno SSL plaćanje",
-    "guaranteed": "Garantovana nagrada",
+    "guaranteed": "Garantovano iznenađenje",
     "shipping": "Besplatna dostava",
     "refund": "Povrat u 30 dana",
     "rating": "4.8/5 zadovoljnih klijenata"
@@ -45,40 +45,40 @@
     "popular": "⭐ NAJPOPULARNIJE",
     "feature1": "Apple kutija",
     "feature2": "Interaktivni automat",
-    "feature3": "Završni pregled nagrada",
+    "feature3": "Završni pregled otkrića",
     "feature4": "Besplatna dostava",
     "buy": "Kupi"
   },
   "prizes": {
-    "label": "Nagrade",
-    "title": "Šta možete osvojiti"
+    "label": "Iznenađenja",
+    "title": "Šta možete otkriti"
   },
   "footer": {
-    "odds": "Šanse za pobedu",
+    "odds": "Šanse za otkriće",
     "reviews": "⭐ Recenzije",
     "copyright": "© 2025 MysteryDrop",
-    "legal": "Usluga je rezervisana za punoletne. Svaka kutija sadrži zagarantovanu nagradu."
+    "legal": "Usluga je rezervisana za punoletne. Svaka kutija sadrži zagarantovano iznenađenje."
   },
   "success": {
-    "preparing": "Pripremamo vašu nagradu...",
+    "preparing": "Pripremamo vaše iznenađenje...",
     "received": "Plaćanje primljeno!",
     "ready": "Vaša kutija je spremna — kliknite da je otvorite!",
-    "guaranteed": "✦ Uvek nešto osvajate, nikada vas ne ostavljamo bez nagrade",
+    "guaranteed": "✦ Uvek nešto nađete, nikada vas ne ostavljamo bez iznenađenja",
     "openButton": "🎉 Otvori kutiju!",
-    "won": "Pobedili ste!",
+    "won": "Otkrili ste!",
     "codeLabel": "Vaš kod za popust:",
     "codeCopied": "✓ Kopirano!",
     "codeCopy": "📋 Kopiraj kod",
     "codeExpiry": "Važi 90 dana — koristite ga pri sledećoj kupovini",
-    "emailContact": "Kontaktiraćemo vas putem emaila za dostavu nagrade.",
+    "emailContact": "Kontaktiraćemo vas putem emaila za dostavu iznenađenja.",
     "another": "← Otvori drugu kutiju"
   },
   "reviews": {
     "label": "Verifikovane recenzije",
     "title": "Šta kažu naši klijenti",
     "totalReviews": "recenzija",
-    "cta": "Pridružite se hiljadama zadovoljnih pobednika!",
+    "cta": "Pridružite se hiljadama zadovoljnih klijenata!",
     "ctaButton": "🎁 Otvori svoju kutiju sada →",
-    "wonLabel": "Osvojio:"
+    "wonLabel": "Otkrio:"
   }
 }

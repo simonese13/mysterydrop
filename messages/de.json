@@ -1,12 +1,12 @@
 {
   "nav": {
-    "prizes": "🍎 Apple Preise"
+    "prizes": "🍎 Apple Überraschungen"
   },
   "hero": {
     "tag": "✦ Nur 4,99€ pro Box",
     "title1": "Öffne die Box.",
-    "title2": "Gewinne Apple.",
-    "description": "Jede Box verbirgt einen Apple-Preis. iPhone, AirPods, MacBook und vieles mehr. Du gewinnst immer etwas — garantiert."
+    "title2": "Entdecke Apple.",
+    "description": "Jede Box verbirgt eine Apple-Überraschung. iPhone, AirPods, MacBook und vieles mehr. Du findest immer etwas — garantiert."
   },
   "checkout": {
     "discountPlaceholder": "Hast du einen Rabattcode? (z.B. MD-XXXXXXXX)",
@@ -26,12 +26,12 @@
     "seconds": "Sek",
     "online": "jetzt online",
     "boxesToday": "Boxen heute geöffnet",
-    "won": "hat gewonnen",
+    "won": "hat entdeckt",
     "ago": "Min vor"
   },
   "trust": {
     "ssl": "Sichere SSL-Zahlung",
-    "guaranteed": "Garantierter Preis",
+    "guaranteed": "Garantierte Überraschung",
     "shipping": "Kostenloser Versand",
     "refund": "30 Tage Rückgabe",
     "rating": "4.8/5 zufriedene Kunden"
@@ -45,40 +45,40 @@
     "popular": "⭐ AM BELIEBTESTEN",
     "feature1": "Apple Boxen",
     "feature2": "Interaktiver Spielautomat",
-    "feature3": "Abschließende Preisübersicht",
+    "feature3": "Abschließende Entdeckungsübersicht",
     "feature4": "Kostenloser Versand",
     "buy": "Kaufen"
   },
   "prizes": {
-    "label": "Die Preise",
-    "title": "Was du gewinnen kannst"
+    "label": "Die Überraschungen",
+    "title": "Was du entdecken kannst"
   },
   "footer": {
-    "odds": "Gewinnwahrscheinlichkeiten",
+    "odds": "Entdeckungswahrscheinlichkeiten",
     "reviews": "⭐ Bewertungen",
     "copyright": "© 2025 MysteryDrop",
-    "legal": "Service nur für Volljährige. Jede Box enthält einen garantierten Preis."
+    "legal": "Service nur für Volljährige. Jede Box enthält eine garantierte Überraschung."
   },
   "success": {
-    "preparing": "Dein Preis wird vorbereitet...",
+    "preparing": "Deine Überraschung wird vorbereitet...",
     "received": "Zahlung erhalten!",
     "ready": "Deine Box ist bereit — klicke zum Öffnen!",
-    "guaranteed": "✦ Du gewinnst immer etwas, wir lassen dich nie ohne Preis",
+    "guaranteed": "✦ Du findest immer etwas, wir lassen dich nie ohne Überraschung",
     "openButton": "🎉 Box öffnen!",
-    "won": "Du hast gewonnen!",
+    "won": "Du hast entdeckt!",
     "codeLabel": "Dein Rabattcode:",
     "codeCopied": "✓ Kopiert!",
     "codeCopy": "📋 Code kopieren",
     "codeExpiry": "90 Tage gültig — beim nächsten Kauf einlösen",
-    "emailContact": "Wir werden dich per E-Mail für die Lieferung des Preises kontaktieren.",
+    "emailContact": "Wir werden dich per E-Mail für die Lieferung deiner Überraschung kontaktieren.",
     "another": "← Weitere Box öffnen"
   },
   "reviews": {
     "label": "Verifizierte Bewertungen",
     "title": "Was unsere Kunden sagen",
     "totalReviews": "Bewertungen",
-    "cta": "Schließe dich tausenden zufriedenen Gewinnern an!",
+    "cta": "Schließe dich tausenden zufriedenen Kunden an!",
     "ctaButton": "🎁 Öffne deine Box jetzt →",
-    "wonLabel": "Gewonnen:"
+    "wonLabel": "Entdeckt:"
   }
 }

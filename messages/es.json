@@ -1,12 +1,12 @@
 {
   "nav": {
-    "prizes": "🍎 Premios Apple"
+    "prizes": "🍎 Sorpresas Apple"
   },
   "hero": {
     "tag": "✦ Solo 4,99€ por caja",
     "title1": "Abre la caja.",
-    "title2": "Gana Apple.",
-    "description": "Cada caja esconde un premio Apple. iPhone, AirPods, MacBook y mucho más. Siempre ganas algo — garantizado."
+    "title2": "Descubre Apple.",
+    "description": "Cada caja esconde una sorpresa Apple. iPhone, AirPods, MacBook y mucho más. Siempre encuentras algo — garantizado."
   },
   "checkout": {
     "discountPlaceholder": "¿Tienes un código de descuento? (ej. MD-XXXXXXXX)",
@@ -26,12 +26,12 @@
     "seconds": "seg",
     "online": "en línea ahora",
     "boxesToday": "cajas abiertas hoy",
-    "won": "ganó",
+    "won": "descubrió",
     "ago": "m hace"
   },
   "trust": {
     "ssl": "Pago seguro SSL",
-    "guaranteed": "Premio garantizado",
+    "guaranteed": "Sorpresa garantizada",
     "shipping": "Envío gratuito",
     "refund": "Reembolso 30 días",
     "rating": "4.8/5 clientes satisfechos"
@@ -45,40 +45,40 @@
     "popular": "⭐ MÁS POPULAR",
     "feature1": "cajas Apple",
     "feature2": "Máquina tragaperras interactiva",
-    "feature3": "Resumen final de premios",
+    "feature3": "Resumen final de descubrimientos",
     "feature4": "Envío gratuito",
     "buy": "Comprar"
   },
   "prizes": {
-    "label": "Los premios",
-    "title": "Qué puedes ganar"
+    "label": "Las sorpresas",
+    "title": "Qué puedes descubrir"
   },
   "footer": {
-    "odds": "Probabilidades de ganar",
+    "odds": "Probabilidades de descubrimiento",
     "reviews": "⭐ Reseñas",
     "copyright": "© 2025 MysteryDrop",
-    "legal": "Servicio reservado para mayores de edad. Cada caja contiene un premio garantizado."
+    "legal": "Servicio reservado para mayores de edad. Cada caja contiene una sorpresa garantizada."
   },
   "success": {
-    "preparing": "Preparando tu premio...",
+    "preparing": "Preparando tu sorpresa...",
     "received": "¡Pago recibido!",
     "ready": "Tu caja está lista — ¡haz clic para abrirla!",
-    "guaranteed": "✦ Siempre ganas algo, nunca te dejamos sin premio",
+    "guaranteed": "✦ Siempre encuentras algo, nunca te dejamos sin sorpresa",
     "openButton": "🎉 ¡Abre la caja!",
-    "won": "¡Has ganado!",
+    "won": "¡Has descubierto!",
     "codeLabel": "Tu código de descuento:",
     "codeCopied": "✓ ¡Copiado!",
     "codeCopy": "📋 Copiar código",
     "codeExpiry": "Válido por 90 días — úsalo en tu próxima compra",
-    "emailContact": "Te contactaremos por email para la entrega del premio.",
+    "emailContact": "Te contactaremos por email para la entrega de tu sorpresa.",
     "another": "← Abre otra caja"
   },
   "reviews": {
     "label": "Reseñas verificadas",
     "title": "Lo que dicen nuestros clientes",
     "totalReviews": "reseñas",
-    "cta": "¡Únete a miles de ganadores satisfechos!",
+    "cta": "¡Únete a miles de clientes satisfechos!",
     "ctaButton": "🎁 Abre tu caja ahora →",
-    "wonLabel": "Ganó:"
+    "wonLabel": "Descubrió:"
   }
 }
