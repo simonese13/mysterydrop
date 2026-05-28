@@ -1,84 +1,12 @@
 {
-  "nav": {
-    "prizes": "🍎 Apple Surprises"
-  },
-  "hero": {
-    "tag": "✦ Only €4.99 per box",
-    "title1": "Open the box.",
-    "title2": "Discover Apple.",
-    "description": "Every box hides an Apple surprise. iPhone, AirPods, MacBook and much more. You always find something — guaranteed."
-  },
-  "checkout": {
-    "discountPlaceholder": "Have a discount code? (e.g. MD-XXXXXXXX)",
-    "payButton": "💳 Pay with Card / Apple Pay / Google Pay",
-    "loading": "Loading...",
-    "bitcoinButton": "₿ Pay with Bitcoin",
-    "bitcoinAmount": "Send exactly",
-    "bitcoinAddress": "to this address:",
-    "bitcoinEmail": "After payment send us the receipt at",
-    "bitcoinActivation": "we will activate your box within 24h.",
-    "codeError": "Invalid or expired code"
-  },
-  "live": {
-    "countdown": "⏰ Special offer ends in:",
-    "hours": "hrs",
-    "minutes": "min",
-    "seconds": "sec",
-    "online": "online now",
-    "boxesToday": "boxes opened today",
-    "won": "discovered",
-    "ago": "m ago"
-  },
-  "trust": {
-    "ssl": "Secure SSL payment",
-    "guaranteed": "Guaranteed surprise",
-    "shipping": "Free shipping",
-    "refund": "30-day refund",
-    "rating": "4.8/5 satisfied customers"
-  },
-  "packages": {
-    "label": "Save more",
-    "title": "Box packages",
-    "subtitle": "The more boxes you buy, the more you save — open everything in one session!",
-    "boxes": "boxes to open in one session",
-    "save": "You save",
-    "popular": "⭐ MOST POPULAR",
-    "feature1": "Apple boxes",
-    "feature2": "Interactive slot machine",
-    "feature3": "Final discoveries summary",
-    "feature4": "Free shipping",
-    "buy": "Buy"
-  },
-  "prizes": {
-    "label": "Surprises",
-    "title": "What you can discover"
-  },
-  "footer": {
-    "odds": "Discovery odds",
-    "reviews": "⭐ Reviews",
-    "copyright": "© 2025 MysteryDrop",
-    "legal": "Service reserved for adults. Every box contains a guaranteed surprise."
-  },
-  "success": {
-    "preparing": "Preparing your surprise...",
-    "received": "Payment received!",
-    "ready": "Your box is ready — click to open it!",
-    "guaranteed": "✦ You always find something, we never leave you empty handed",
-    "openButton": "🎉 Open the box!",
-    "won": "You discovered!",
-    "codeLabel": "Your discount code:",
-    "codeCopied": "✓ Copied!",
-    "codeCopy": "📋 Copy code",
-    "codeExpiry": "Valid for 90 days — use it at your next checkout",
-    "emailContact": "We will contact you by email for surprise delivery.",
-    "another": "← Open another box"
-  },
-  "reviews": {
-    "label": "Verified reviews",
-    "title": "What our customers say",
-    "totalReviews": "reviews",
-    "cta": "Join thousands of satisfied customers!",
-    "ctaButton": "🎁 Open your box now →",
-    "wonLabel": "Discovered:"
-  }
+  "nav": { "prizes": "🍎 Apple Surprises" },
+  "hero": { "tag": "✦ Only €4.99 per box", "tagSuffix": "per box", "title1": "Open the box.", "title2": "Discover Apple.", "description": "Every box hides an Apple surprise. iPhone, AirPods, MacBook and much more. You always find something — guaranteed.", "guaranteed": "you always find something" },
+  "checkout": { "discountPlaceholder": "Have a discount code? (e.g. MD-XXXXXXXX)", "payButton": "💳 Pay with Card / Apple Pay / Google Pay", "loading": "Loading...", "bitcoinButton": "₿ Pay with Bitcoin", "bitcoinAmount": "Send exactly", "bitcoinAddress": "to this address:", "bitcoinEmail": "After payment send us the receipt at", "bitcoinActivation": "we will activate your box within 24h.", "codeError": "Invalid or expired code" },
+  "live": { "countdown": "⏰ Special offer ends in:", "hours": "hrs", "minutes": "min", "seconds": "sec", "online": "online now", "boxesToday": "boxes opened today", "won": "discovered", "ago": "m ago" },
+  "trust": { "ssl": "Secure SSL payment", "guaranteed": "Guaranteed surprise", "shipping": "Free shipping", "refund": "30-day refund", "rating": "4.8/5 satisfied customers" },
+  "packages": { "label": "Save more", "title": "Box packages", "subtitle": "The more boxes you buy, the more you save — open everything in one session!", "boxes": "boxes to open in one session", "save": "You save", "popular": "⭐ MOST POPULAR", "feature1": "Apple boxes", "feature2": "Interactive slot machine", "feature3": "Final discoveries summary", "feature4": "Free shipping", "buy": "Buy" },
+  "prizes": { "label": "Surprises", "title": "What you can discover", "credit_name": "Discounted Box!", "credit_desc": "Credit for the next Mystery Box at only €2", "box_name": "Free Mystery Box", "box_desc": "A Mystery Box worth €4.99 completely free", "amazon20_name": "Amazon Voucher €20", "amazon20_desc": "Amazon gift card worth €20", "amazon50_name": "Amazon Voucher €50", "amazon50_desc": "Amazon gift card worth €50", "airpods_name": "Apple AirPods", "airpods_desc": "Original Apple AirPods", "iphone_name": "Latest iPhone", "iphone_desc": "Latest iPhone model available" },
+  "footer": { "odds": "Discovery odds", "reviews": "⭐ Reviews", "copyright": "© 2025 MysteryDrop", "legal": "Service reserved for adults. Every box contains a guaranteed surprise." },
+  "success": { "preparing": "Preparing your surprise...", "received": "Payment received!", "ready": "Your box is ready — click to open it!", "guaranteed": "✦ You always find something, we never leave you empty handed", "openButton": "🎉 Open the box!", "won": "You discovered!", "codeLabel": "Your discount code:", "codeCopied": "✓ Copied!", "codeCopy": "📋 Copy code", "codeExpiry": "Valid for 90 days — use it at your next checkout", "emailContact": "We will contact you by email for surprise delivery.", "another": "← Open another box" },
+  "reviews": { "label": "Verified reviews", "title": "What our customers say", "totalReviews": "reviews", "cta": "Join thousands of satisfied customers!", "ctaButton": "🎁 Open your box now →", "wonLabel": "Discovered:" }
 }
