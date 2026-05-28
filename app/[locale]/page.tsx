@@ -79,7 +79,7 @@ function MagicBox() {
   );
 }
 
-function LiveFeed() {
+function LiveFeed({ t }: { t: ReturnType<typeof useTranslations> }) {
   const [current, setCurrent] = useState(0);
   const [visible, setVisible] = useState(true);
   const [onlineCount, setOnlineCount] = useState(80);
@@ -117,16 +117,16 @@ function LiveFeed() {
   return (
     <div style={{ background: "#13131a", borderBottom: "0.5px solid rgba(255,255,255,0.06)" }}>
       <div style={{ background: "rgba(245,200,66,0.08)", borderBottom: "0.5px solid rgba(245,200,66,0.15)", padding: "8px 2rem", display: "flex", alignItems: "center", justifyContent: "center", gap: "1rem", flexWrap: "wrap" }}>
-        <span style={{ color: "#f5c842", fontSize: "12px", fontWeight: 600 }}>⏰ Offerta speciale termina tra:</span>
+        <span style={{ color: "#f5c842", fontSize: "12px", fontWeight: 600 }}>{t("live.countdown")}</span>
         <div style={{ display: "flex", gap: "0.5rem" }}>
           {[
-            { val: String(hours).padStart(2, "0"), label: "ore" },
-            { val: String(minutes).padStart(2, "0"), label: "min" },
-            { val: String(seconds).padStart(2, "0"), label: "sec" },
-          ].map((t) => (
-            <div key={t.label} style={{ background: "#0a0a0f", border: "0.5px solid rgba(245,200,66,0.3)", borderRadius: "6px", padding: "4px 8px", textAlign: "center", minWidth: "44px" }}>
-              <div style={{ color: "#f5c842", fontSize: "16px", fontWeight: 800, lineHeight: 1 }}>{t.val}</div>
-              <div style={{ color: "#8a8880", fontSize: "9px", marginTop: "2px" }}>{t.label}</div>
+            { val: String(hours).padStart(2, "0"), label: t("live.hours") },
+            { val: String(minutes).padStart(2, "0"), label: t("live.minutes") },
+            { val: String(seconds).padStart(2, "0"), label: t("live.seconds") },
+          ].map((item) => (
+            <div key={item.label} style={{ background: "#0a0a0f", border: "0.5px solid rgba(245,200,66,0.3)", borderRadius: "6px", padding: "4px 8px", textAlign: "center", minWidth: "44px" }}>
+              <div style={{ color: "#f5c842", fontSize: "16px", fontWeight: 800, lineHeight: 1 }}>{item.val}</div>
+              <div style={{ color: "#8a8880", fontSize: "9px", marginTop: "2px" }}>{item.label}</div>
             </div>
           ))}
         </div>
@@ -135,18 +135,18 @@ function LiveFeed() {
         <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "6px", fontSize: "12px", color: "#8a8880" }}>
             <span style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#63d96b", display: "inline-block", animation: "pulse 2s infinite" }}></span>
-            <strong style={{ color: "#f0eee8" }}>{onlineCount}</strong> online ora
+            <strong style={{ color: "#f0eee8" }}>{onlineCount}</strong> {t("live.online")}
           </div>
           <div style={{ fontSize: "12px", color: "#8a8880" }}>
-            <strong style={{ color: "#f0eee8" }}>{boxCount}</strong> box aperte oggi
+            <strong style={{ color: "#f0eee8" }}>{boxCount}</strong> {t("live.boxesToday")}
           </div>
         </div>
         <div style={{ transition: "opacity 0.5s", opacity: visible ? 1 : 0, display: "flex", alignItems: "center", gap: "8px", fontSize: "12px", background: "rgba(99,217,107,0.08)", border: "0.5px solid rgba(99,217,107,0.2)", borderRadius: "20px", padding: "4px 12px" }}>
           <span>🎉</span>
           <span style={{ color: "#f0eee8" }}><strong>{win.name}</strong> da {win.city}</span>
-          <span style={{ color: "#8a8880" }}>ha vinto</span>
+          <span style={{ color: "#8a8880" }}>{t("live.won")}</span>
           <span style={{ color: "#f5c842", fontWeight: 600 }}>{win.prize}</span>
-          <span style={{ color: "#8a8880" }}>{win.time}m fa</span>
+          <span style={{ color: "#8a8880" }}>{win.time}{t("live.ago")}</span>
         </div>
       </div>
       <style>{`@keyframes pulse { 0%,100%{opacity:1}50%{opacity:0.4} }`}</style>
@@ -219,7 +219,7 @@ export default function Home() {
       </nav>
 
       {/* LIVE FEED */}
-      <LiveFeed />
+      <LiveFeed t={t} />
 
       {/* HERO */}
       <section style={{ textAlign: "center", padding: "5rem 2rem 3rem" }}>
@@ -291,24 +291,24 @@ export default function Home() {
       {/* TRUST STRIP */}
       <div style={{ background: "#13131a", borderTop: "0.5px solid rgba(255,255,255,0.06)", borderBottom: "0.5px solid rgba(255,255,255,0.06)", padding: "1.25rem 2rem", display: "flex", alignItems: "center", justifyContent: "center", gap: "2rem", flexWrap: "wrap", margin: "2rem 0" }}>
         {[
-          { icon: "🔒", text: "Pagamento sicuro SSL" },
-          { icon: "✅", text: "Premio garantito" },
-          { icon: "🚀", text: "Spedizione gratuita" },
-          { icon: "↩️", text: "Rimborso 30 giorni" },
-          { icon: "⭐", text: "4.8/5 clienti soddisfatti" },
+          { icon: "🔒", key: "ssl" },
+          { icon: "✅", key: "guaranteed" },
+          { icon: "🚀", key: "shipping" },
+          { icon: "↩️", key: "refund" },
+          { icon: "⭐", key: "rating" },
         ].map((item) => (
-          <div key={item.text} style={{ display: "flex", alignItems: "center", gap: "6px", fontSize: "0.82rem", color: "#8a8880" }}>
+          <div key={item.key} style={{ display: "flex", alignItems: "center", gap: "6px", fontSize: "0.82rem", color: "#8a8880" }}>
             <span>{item.icon}</span>
-            <span>{item.text}</span>
+            <span>{t(`trust.${item.key}`)}</span>
           </div>
         ))}
       </div>
 
       {/* PACCHETTI */}
       <section style={{ padding: "3rem 2rem", maxWidth: "900px", margin: "0 auto" }}>
-        <p style={{ fontSize: "11px", letterSpacing: "0.15em", textTransform: "uppercase", color: "#8a8880", marginBottom: "0.5rem" }}>Risparmia di più</p>
-        <h2 style={{ fontWeight: 800, fontSize: "2rem", marginBottom: "0.5rem" }}>Pacchetti box</h2>
-        <p style={{ color: "#8a8880", marginBottom: "2rem", fontSize: "0.95rem" }}>Più box compri, più risparmi — apri tutto in una sessione!</p>
+        <p style={{ fontSize: "11px", letterSpacing: "0.15em", textTransform: "uppercase", color: "#8a8880", marginBottom: "0.5rem" }}>{t("packages.label")}</p>
+        <h2 style={{ fontWeight: 800, fontSize: "2rem", marginBottom: "0.5rem" }}>{t("packages.title")}</h2>
+        <p style={{ color: "#8a8880", marginBottom: "2rem", fontSize: "0.95rem" }}>{t("packages.subtitle")}</p>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "1rem" }}>
           {[
             { name: "Silver", icon: "🥈", boxes: 100, original: 499, price: 350, savings: 149, color: "#8a8880", stripe: "silver" },
@@ -318,25 +318,25 @@ export default function Home() {
             <div key={pkg.name} style={{ background: "#13131a", border: `0.5px solid ${pkg.popular ? pkg.color : "rgba(255,255,255,0.08)"}`, borderRadius: "16px", padding: "1.75rem", position: "relative" }}>
               {pkg.popular && (
                 <div style={{ position: "absolute", top: "-12px", left: "50%", transform: "translateX(-50%)", background: pkg.color, color: "#000", fontSize: "11px", fontWeight: 700, padding: "4px 14px", borderRadius: "20px", whiteSpace: "nowrap" }}>
-                  ⭐ PIÙ POPOLARE
+                  {t("packages.popular")}
                 </div>
               )}
               <div style={{ fontSize: "2.5rem", marginBottom: "0.75rem" }}>{pkg.icon}</div>
               <h3 style={{ fontWeight: 800, fontSize: "1.3rem", marginBottom: "0.25rem", color: pkg.color }}>{pkg.name}</h3>
-              <p style={{ color: "#8a8880", fontSize: "0.85rem", marginBottom: "1rem" }}>{pkg.boxes} box da aprire in una sessione</p>
+              <p style={{ color: "#8a8880", fontSize: "0.85rem", marginBottom: "1rem" }}>{pkg.boxes} {t("packages.boxes")}</p>
               <div style={{ marginBottom: "1rem" }}>
                 <span style={{ textDecoration: "line-through", color: "#8a8880", fontSize: "0.9rem" }}>€{pkg.original}</span>
                 <div style={{ fontWeight: 800, fontSize: "2rem", color: pkg.color, lineHeight: 1 }}>€{pkg.price}</div>
-                <span style={{ background: "rgba(99,217,107,0.15)", color: "#63d96b", fontSize: "0.78rem", padding: "3px 10px", borderRadius: "20px", fontWeight: 600 }}>Risparmi €{pkg.savings}</span>
+                <span style={{ background: "rgba(99,217,107,0.15)", color: "#63d96b", fontSize: "0.78rem", padding: "3px 10px", borderRadius: "20px", fontWeight: 600 }}>{t("packages.save")} €{pkg.savings}</span>
               </div>
               <div style={{ color: "#8a8880", fontSize: "0.82rem", marginBottom: "1.25rem", lineHeight: 1.7 }}>
-                ✓ {pkg.boxes} box Apple<br />
-                ✓ Slot machine interattiva<br />
-                ✓ Riepilogo premi finale<br />
-                ✓ Spedizione gratuita
+                ✓ {pkg.boxes} {t("packages.feature1")}<br />
+                ✓ {t("packages.feature2")}<br />
+                ✓ {t("packages.feature3")}<br />
+                ✓ {t("packages.feature4")}
               </div>
               <button onClick={() => handlePackage(pkg.stripe)} style={{ width: "100%", background: pkg.popular ? pkg.color : "transparent", color: pkg.popular ? "#000" : pkg.color, fontWeight: 700, fontSize: "0.95rem", padding: "12px", border: `1px solid ${pkg.color}`, borderRadius: "10px", cursor: "pointer" }}>
-                Acquista {pkg.name} →
+                {t("packages.buy")} {pkg.name} →
               </button>
             </div>
           ))}
@@ -369,7 +369,7 @@ export default function Home() {
       <footer style={{ textAlign: "center", padding: "2.5rem 2rem", borderTop: "0.5px solid rgba(255,255,255,0.08)", fontSize: "0.8rem", color: "#8a8880", marginTop: "3rem" }}>
         <p style={{ marginBottom: "0.5rem", display: "flex", gap: "1.5rem", justifyContent: "center", flexWrap: "wrap" }}>
           <a href={`/${locale}/probabilita`} style={{ color: "#8a8880", textDecoration: "none", borderBottom: "0.5px solid rgba(255,255,255,0.15)" }}>{t("footer.odds")}</a>
-          <a href={`/${locale}/recensioni`} style={{ color: "#8a8880", textDecoration: "none", borderBottom: "0.5px solid rgba(255,255,255,0.15)" }}>⭐ Recensioni</a>
+          <a href={`/${locale}/recensioni`} style={{ color: "#8a8880", textDecoration: "none", borderBottom: "0.5px solid rgba(255,255,255,0.15)" }}>{t("footer.reviews")}</a>
         </p>
         <p>{t("footer.copyright")}</p>
         <p style={{ marginTop: "0.5rem" }}>{t("footer.legal")}</p>
