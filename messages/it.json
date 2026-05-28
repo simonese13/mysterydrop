@@ -1,84 +1,12 @@
 {
-  "nav": {
-    "prizes": "🍎 Sorprese Apple"
-  },
-  "hero": {
-    "tag": "✦ Solo 4,99€ a box",
-    "title1": "Apri la box.",
-    "title2": "Scopri Apple.",
-    "description": "Ogni box nasconde una sorpresa Apple. iPhone, AirPods, MacBook e molto altro. Trovi sempre qualcosa — garantito."
-  },
-  "checkout": {
-    "discountPlaceholder": "Hai un codice sconto? (es. MD-XXXXXXXX)",
-    "payButton": "💳 Paga con Carta / Apple Pay / Google Pay",
-    "loading": "Caricamento...",
-    "bitcoinButton": "₿ Paga con Bitcoin",
-    "bitcoinAmount": "Invia esattamente",
-    "bitcoinAddress": "a questo indirizzo:",
-    "bitcoinEmail": "Dopo il pagamento inviaci la ricevuta a",
-    "bitcoinActivation": "attiveremo la tua box entro 24h.",
-    "codeError": "Codice non valido o scaduto"
-  },
-  "live": {
-    "countdown": "⏰ Offerta speciale termina tra:",
-    "hours": "ore",
-    "minutes": "min",
-    "seconds": "sec",
-    "online": "online ora",
-    "boxesToday": "box aperte oggi",
-    "won": "ha scoperto",
-    "ago": "m fa"
-  },
-  "trust": {
-    "ssl": "Pagamento sicuro SSL",
-    "guaranteed": "Sorpresa garantita",
-    "shipping": "Spedizione gratuita",
-    "refund": "Rimborso 30 giorni",
-    "rating": "4.8/5 clienti soddisfatti"
-  },
-  "packages": {
-    "label": "Risparmia di più",
-    "title": "Pacchetti box",
-    "subtitle": "Più box compri, più risparmi — apri tutto in una sessione!",
-    "boxes": "box da aprire in una sessione",
-    "save": "Risparmi",
-    "popular": "⭐ PIÙ POPOLARE",
-    "feature1": "box Apple",
-    "feature2": "Slot machine interattiva",
-    "feature3": "Riepilogo scoperte finale",
-    "feature4": "Spedizione gratuita",
-    "buy": "Acquista"
-  },
-  "prizes": {
-    "label": "Le sorprese",
-    "title": "Cosa puoi scoprire"
-  },
-  "footer": {
-    "odds": "Probabilità di scoperta",
-    "reviews": "⭐ Recensioni",
-    "copyright": "© 2025 MysteryDrop",
-    "legal": "Il servizio è riservato ai maggiorenni. Ogni box contiene una sorpresa garantita."
-  },
-  "success": {
-    "preparing": "Preparando la tua sorpresa...",
-    "received": "Pagamento ricevuto!",
-    "ready": "La tua box è pronta — clicca per aprirla!",
-    "guaranteed": "✦ Trovi sempre qualcosa, non ti lasciamo senza sorpresa",
-    "openButton": "🎉 Apri la box!",
-    "won": "Hai scoperto!",
-    "codeLabel": "Il tuo codice sconto:",
-    "codeCopied": "✓ Copiato!",
-    "codeCopy": "📋 Copia codice",
-    "codeExpiry": "Valido per 90 giorni — inseriscilo al prossimo checkout",
-    "emailContact": "Ti contatteremo via email per la consegna della sorpresa.",
-    "another": "← Apri un'altra box"
-  },
-  "reviews": {
-    "label": "Recensioni verificate",
-    "title": "Cosa dicono i nostri clienti",
-    "totalReviews": "recensioni",
-    "cta": "Unisciti a migliaia di clienti soddisfatti!",
-    "ctaButton": "🎁 Apri la tua box ora →",
-    "wonLabel": "Ha scoperto:"
-  }
+  "nav": { "prizes": "🍎 Sorprese Apple" },
+  "hero": { "tag": "✦ Solo 4,99€ a box", "tagSuffix": "a box", "title1": "Apri la box.", "title2": "Scopri Apple.", "description": "Ogni box nasconde una sorpresa Apple. iPhone, AirPods, MacBook e molto altro. Trovi sempre qualcosa — garantito.", "guaranteed": "trovi sempre qualcosa" },
+  "checkout": { "discountPlaceholder": "Hai un codice sconto? (es. MD-XXXXXXXX)", "payButton": "💳 Paga con Carta / Apple Pay / Google Pay", "loading": "Caricamento...", "bitcoinButton": "₿ Paga con Bitcoin", "bitcoinAmount": "Invia esattamente", "bitcoinAddress": "a questo indirizzo:", "bitcoinEmail": "Dopo il pagamento inviaci la ricevuta a", "bitcoinActivation": "attiveremo la tua box entro 24h.", "codeError": "Codice non valido o scaduto" },
+  "live": { "countdown": "⏰ Offerta speciale termina tra:", "hours": "ore", "minutes": "min", "seconds": "sec", "online": "online ora", "boxesToday": "box aperte oggi", "won": "ha scoperto", "ago": "m fa" },
+  "trust": { "ssl": "Pagamento sicuro SSL", "guaranteed": "Sorpresa garantita", "shipping": "Spedizione gratuita", "refund": "Rimborso 30 giorni", "rating": "4.8/5 clienti soddisfatti" },
+  "packages": { "label": "Risparmia di più", "title": "Pacchetti box", "subtitle": "Più box compri, più risparmi — apri tutto in una sessione!", "boxes": "box da aprire in una sessione", "save": "Risparmi", "popular": "⭐ PIÙ POPOLARE", "feature1": "box Apple", "feature2": "Slot machine interattiva", "feature3": "Riepilogo scoperte finale", "feature4": "Spedizione gratuita", "buy": "Acquista" },
+  "prizes": { "label": "Le sorprese", "title": "Cosa puoi scoprire", "credit_name": "Box Scontata!", "credit_desc": "Credito per la prossima Mystery Box a soli 2€", "box_name": "Mystery Box Gratis", "box_desc": "Una Mystery Box del valore di 4,99€ completamente gratuita", "amazon20_name": "Buono Amazon 20€", "amazon20_desc": "Buono acquisto Amazon del valore di 20€", "amazon50_name": "Buono Amazon 50€", "amazon50_desc": "Buono acquisto Amazon del valore di 50€", "airpods_name": "AirPods Apple", "airpods_desc": "AirPods Apple originali", "iphone_name": "iPhone ultimo modello", "iphone_desc": "iPhone ultimo modello disponibile" },
+  "footer": { "odds": "Probabilità di scoperta", "reviews": "⭐ Recensioni", "copyright": "© 2025 MysteryDrop", "legal": "Il servizio è riservato ai maggiorenni. Ogni box contiene una sorpresa garantita." },
+  "success": { "preparing": "Preparando la tua sorpresa...", "received": "Pagamento ricevuto!", "ready": "La tua box è pronta — clicca per aprirla!", "guaranteed": "✦ Trovi sempre qualcosa, non ti lasciamo senza sorpresa", "openButton": "🎉 Apri la box!", "won": "Hai scoperto!", "codeLabel": "Il tuo codice sconto:", "codeCopied": "✓ Copiato!", "codeCopy": "📋 Copia codice", "codeExpiry": "Valido per 90 giorni — inseriscilo al prossimo checkout", "emailContact": "Ti contatteremo via email per la consegna della sorpresa.", "another": "← Apri un'altra box" },
+  "reviews": { "label": "Recensioni verificate", "title": "Cosa dicono i nostri clienti", "totalReviews": "recensioni", "cta": "Unisciti a migliaia di clienti soddisfatti!", "ctaButton": "🎁 Apri la tua box ora →", "wonLabel": "Ha scoperto:" }
 }

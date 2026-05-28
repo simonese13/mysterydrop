@@ -391,6 +391,7 @@ export default function Home() {
         <p style={{ marginBottom: "0.5rem", display: "flex", gap: "1.5rem", justifyContent: "center", flexWrap: "wrap" }}>
           <a href={`/${locale}/probabilita`} style={{ color: "#8a8880", textDecoration: "none", borderBottom: "0.5px solid rgba(255,255,255,0.15)" }}>{t("footer.odds")}</a>
           <a href={`/${locale}/recensioni`} style={{ color: "#8a8880", textDecoration: "none", borderBottom: "0.5px solid rgba(255,255,255,0.15)" }}>{t("footer.reviews")}</a>
+          <a href={`/${locale}/faq`} style={{ color: "#8a8880", textDecoration: "none", borderBottom: "0.5px solid rgba(255,255,255,0.15)" }}>FAQ</a>
         </p>
         <p>{t("footer.copyright")}</p>
         <p style={{ marginTop: "0.5rem" }}>{t("footer.legal")}</p>
