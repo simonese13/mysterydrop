@@ -19,12 +19,43 @@
     "bitcoinActivation": "wir aktivieren deine Box innerhalb von 24h.",
     "codeError": "Ungültiger oder abgelaufener Code"
   },
+  "live": {
+    "countdown": "⏰ Sonderangebot endet in:",
+    "hours": "Std",
+    "minutes": "Min",
+    "seconds": "Sek",
+    "online": "jetzt online",
+    "boxesToday": "Boxen heute geöffnet",
+    "won": "hat gewonnen",
+    "ago": "Min vor"
+  },
+  "trust": {
+    "ssl": "Sichere SSL-Zahlung",
+    "guaranteed": "Garantierter Preis",
+    "shipping": "Kostenloser Versand",
+    "refund": "30 Tage Rückgabe",
+    "rating": "4.8/5 zufriedene Kunden"
+  },
+  "packages": {
+    "label": "Mehr sparen",
+    "title": "Box-Pakete",
+    "subtitle": "Je mehr Boxen du kaufst, desto mehr sparst du — alles in einer Sitzung öffnen!",
+    "boxes": "Boxen in einer Sitzung zu öffnen",
+    "save": "Du sparst",
+    "popular": "⭐ AM BELIEBTESTEN",
+    "feature1": "Apple Boxen",
+    "feature2": "Interaktiver Spielautomat",
+    "feature3": "Abschließende Preisübersicht",
+    "feature4": "Kostenloser Versand",
+    "buy": "Kaufen"
+  },
   "prizes": {
     "label": "Die Preise",
     "title": "Was du gewinnen kannst"
   },
   "footer": {
     "odds": "Gewinnwahrscheinlichkeiten",
+    "reviews": "⭐ Bewertungen",
     "copyright": "© 2025 MysteryDrop",
     "legal": "Service nur für Volljährige. Jede Box enthält einen garantierten Preis."
   },
@@ -41,5 +72,13 @@
     "codeExpiry": "90 Tage gültig — beim nächsten Kauf einlösen",
     "emailContact": "Wir werden dich per E-Mail für die Lieferung des Preises kontaktieren.",
     "another": "← Weitere Box öffnen"
+  },
+  "reviews": {
+    "label": "Verifizierte Bewertungen",
+    "title": "Was unsere Kunden sagen",
+    "totalReviews": "Bewertungen",
+    "cta": "Schließe dich tausenden zufriedenen Gewinnern an!",
+    "ctaButton": "🎁 Öffne deine Box jetzt →",
+    "wonLabel": "Gewonnen:"
   }
 }

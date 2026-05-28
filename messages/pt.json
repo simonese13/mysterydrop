@@ -19,12 +19,43 @@
     "bitcoinActivation": "ativaremos sua caixa em 24h.",
     "codeError": "Código inválido ou expirado"
   },
+  "live": {
+    "countdown": "⏰ Oferta especial termina em:",
+    "hours": "hrs",
+    "minutes": "min",
+    "seconds": "seg",
+    "online": "online agora",
+    "boxesToday": "caixas abertas hoje",
+    "won": "ganhou",
+    "ago": "min atrás"
+  },
+  "trust": {
+    "ssl": "Pagamento seguro SSL",
+    "guaranteed": "Prêmio garantido",
+    "shipping": "Frete grátis",
+    "refund": "Reembolso em 30 dias",
+    "rating": "4.8/5 clientes satisfeitos"
+  },
+  "packages": {
+    "label": "Economize mais",
+    "title": "Pacotes de caixas",
+    "subtitle": "Quanto mais caixas você compra, mais economiza — abra tudo em uma sessão!",
+    "boxes": "caixas para abrir em uma sessão",
+    "save": "Você economiza",
+    "popular": "⭐ MAIS POPULAR",
+    "feature1": "caixas Apple",
+    "feature2": "Caça-níqueis interativo",
+    "feature3": "Resumo final dos prêmios",
+    "feature4": "Frete grátis",
+    "buy": "Comprar"
+  },
   "prizes": {
     "label": "Os prêmios",
     "title": "O que você pode ganhar"
   },
   "footer": {
     "odds": "Probabilidades de ganhar",
+    "reviews": "⭐ Avaliações",
     "copyright": "© 2025 MysteryDrop",
     "legal": "Serviço reservado para maiores de idade. Cada caixa contém um prêmio garantido."
   },
@@ -41,5 +72,13 @@
     "codeExpiry": "Válido por 90 dias — use na próxima compra",
     "emailContact": "Entraremos em contato por email para a entrega do prêmio.",
     "another": "← Abrir outra caixa"
+  },
+  "reviews": {
+    "label": "Avaliações verificadas",
+    "title": "O que nossos clientes dizem",
+    "totalReviews": "avaliações",
+    "cta": "Junte-se a milhares de vencedores satisfeitos!",
+    "ctaButton": "🎁 Abra sua caixa agora →",
+    "wonLabel": "Ganhou:"
   }
 }

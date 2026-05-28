@@ -19,12 +19,43 @@
     "bitcoinActivation": "aktywujemy twoje pudełko w ciągu 24h.",
     "codeError": "Nieprawidłowy lub wygasły kod"
   },
+  "live": {
+    "countdown": "⏰ Oferta specjalna kończy się za:",
+    "hours": "godz",
+    "minutes": "min",
+    "seconds": "sek",
+    "online": "online teraz",
+    "boxesToday": "pudełek otwartych dziś",
+    "won": "wygrał",
+    "ago": "min temu"
+  },
+  "trust": {
+    "ssl": "Bezpieczna płatność SSL",
+    "guaranteed": "Gwarantowana nagroda",
+    "shipping": "Darmowa wysyłka",
+    "refund": "Zwrot w 30 dni",
+    "rating": "4.8/5 zadowolonych klientów"
+  },
+  "packages": {
+    "label": "Oszczędzaj więcej",
+    "title": "Pakiety pudełek",
+    "subtitle": "Im więcej pudełek kupujesz, tym więcej oszczędzasz — otwórz wszystko w jednej sesji!",
+    "boxes": "pudełek do otwarcia w jednej sesji",
+    "save": "Oszczędzasz",
+    "popular": "⭐ NAJPOPULARNIEJSZY",
+    "feature1": "pudełek Apple",
+    "feature2": "Interaktywny automat",
+    "feature3": "Końcowe podsumowanie nagród",
+    "feature4": "Darmowa wysyłka",
+    "buy": "Kup"
+  },
   "prizes": {
     "label": "Nagrody",
     "title": "Co możesz wygrać"
   },
   "footer": {
     "odds": "Szanse na wygraną",
+    "reviews": "⭐ Opinie",
     "copyright": "© 2025 MysteryDrop",
     "legal": "Usługa przeznaczona dla pełnoletnich. Każde pudełko zawiera gwarantowaną nagrodę."
   },
@@ -41,5 +72,13 @@
     "codeExpiry": "Ważny przez 90 dni — użyj przy następnym zakupie",
     "emailContact": "Skontaktujemy się z tobą emailem w sprawie dostawy nagrody.",
     "another": "← Otwórz kolejne pudełko"
+  },
+  "reviews": {
+    "label": "Zweryfikowane opinie",
+    "title": "Co mówią nasi klienci",
+    "totalReviews": "opinii",
+    "cta": "Dołącz do tysięcy zadowolonych zwycięzców!",
+    "ctaButton": "🎁 Otwórz swoje pudełko teraz →",
+    "wonLabel": "Wygrał:"
   }
 }

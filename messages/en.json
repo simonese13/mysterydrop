@@ -19,12 +19,43 @@
     "bitcoinActivation": "we will activate your box within 24h.",
     "codeError": "Invalid or expired code"
   },
+  "live": {
+    "countdown": "⏰ Special offer ends in:",
+    "hours": "hrs",
+    "minutes": "min",
+    "seconds": "sec",
+    "online": "online now",
+    "boxesToday": "boxes opened today",
+    "won": "won",
+    "ago": "m ago"
+  },
+  "trust": {
+    "ssl": "Secure SSL payment",
+    "guaranteed": "Guaranteed prize",
+    "shipping": "Free shipping",
+    "refund": "30-day refund",
+    "rating": "4.8/5 satisfied customers"
+  },
+  "packages": {
+    "label": "Save more",
+    "title": "Box packages",
+    "subtitle": "The more boxes you buy, the more you save — open everything in one session!",
+    "boxes": "boxes to open in one session",
+    "save": "You save",
+    "popular": "⭐ MOST POPULAR",
+    "feature1": "Apple boxes",
+    "feature2": "Interactive slot machine",
+    "feature3": "Final prize summary",
+    "feature4": "Free shipping",
+    "buy": "Buy"
+  },
   "prizes": {
     "label": "Prizes",
     "title": "What you can win"
   },
   "footer": {
     "odds": "Winning odds",
+    "reviews": "⭐ Reviews",
     "copyright": "© 2025 MysteryDrop",
     "legal": "Service reserved for adults. Every box contains a guaranteed prize."
   },
@@ -41,5 +72,13 @@
     "codeExpiry": "Valid for 90 days — use it at your next checkout",
     "emailContact": "We will contact you by email for prize delivery.",
     "another": "← Open another box"
+  },
+  "reviews": {
+    "label": "Verified reviews",
+    "title": "What our customers say",
+    "totalReviews": "reviews",
+    "cta": "Join thousands of satisfied winners!",
+    "ctaButton": "🎁 Open your box now →",
+    "wonLabel": "Won:"
   }
 }

@@ -19,12 +19,43 @@
     "bitcoinActivation": "vom activa cutia ta în 24h.",
     "codeError": "Cod invalid sau expirat"
   },
+  "live": {
+    "countdown": "⏰ Oferta specială se termină în:",
+    "hours": "ore",
+    "minutes": "min",
+    "seconds": "sec",
+    "online": "online acum",
+    "boxesToday": "cutii deschise azi",
+    "won": "a câștigat",
+    "ago": "min în urmă"
+  },
+  "trust": {
+    "ssl": "Plată securizată SSL",
+    "guaranteed": "Premiu garantat",
+    "shipping": "Livrare gratuită",
+    "refund": "Rambursare 30 zile",
+    "rating": "4.8/5 clienți mulțumiți"
+  },
+  "packages": {
+    "label": "Economisește mai mult",
+    "title": "Pachete de cutii",
+    "subtitle": "Cu cât cumperi mai multe cutii, cu atât economisești mai mult — deschide totul într-o sesiune!",
+    "boxes": "cutii de deschis într-o sesiune",
+    "save": "Economisești",
+    "popular": "⭐ CEL MAI POPULAR",
+    "feature1": "cutii Apple",
+    "feature2": "Slot machine interactiv",
+    "feature3": "Rezumat final al premiilor",
+    "feature4": "Livrare gratuită",
+    "buy": "Cumpără"
+  },
   "prizes": {
     "label": "Premiile",
     "title": "Ce poți câștiga"
   },
   "footer": {
     "odds": "Șanse de câștig",
+    "reviews": "⭐ Recenzii",
     "copyright": "© 2025 MysteryDrop",
     "legal": "Serviciu rezervat persoanelor majore. Fiecare cutie conține un premiu garantat."
   },
@@ -41,5 +72,13 @@
     "codeExpiry": "Valabil 90 de zile — folosește-l la următoarea comandă",
     "emailContact": "Te vom contacta prin email pentru livrarea premiului.",
     "another": "← Deschide altă cutie"
+  },
+  "reviews": {
+    "label": "Recenzii verificate",
+    "title": "Ce spun clienții noștri",
+    "totalReviews": "recenzii",
+    "cta": "Alătură-te miilor de câștigători mulțumiți!",
+    "ctaButton": "🎁 Deschide cutia ta acum →",
+    "wonLabel": "A câștigat:"
   }
 }
