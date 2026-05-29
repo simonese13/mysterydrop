@@ -89,8 +89,24 @@ function PacchettoContent() {
   const [finished, setFinished] = useState(false);
   const [fetching, setFetching] = useState(false);
 
-  useEffect(() => {
+ useEffect(() => {
     async function init() {
+      const boxesParam = searchParams.get("boxes");
+      const isManual = searchParams.get("manual") === "true";
+      
+      if (isManual && boxesParam) {
+        setTotalBoxes(parseInt(boxesParam));
+        const res = await fetch("/api/prize", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ sessionId, manual: true }),
+        });
+        const data = await res.json();
+        setCurrentPrize(data.prize);
+        setLoading(false);
+        return;
+      }
+
       const res = await fetch("/api/prize", {
         method: "POST",
         headers: { "Content-Type": "application/json" },

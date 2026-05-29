@@ -86,6 +86,36 @@ export default function Admin() {
       <div style={{ maxWidth: "1000px", margin: "0 auto" }}>
 
         {/* HEADER */}
+       <button
+              onClick={async () => {
+                const email = prompt("Email del cliente:");
+                if (!email) return;
+                const pkg = prompt("Pacchetto (silver/gold/platinum):");
+                if (!pkg) return;
+                const name = prompt("Nome del cliente (opzionale):");
+                
+                const res = await fetch("/api/admin/data", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({ 
+                    action: "create_manual_package",
+                    email,
+                    package: pkg,
+                    customerName: name || email
+                  }),
+                });
+                const data = await res.json();
+                if (data.success) {
+                  navigator.clipboard.writeText(data.packageUrl);
+                  alert(`✅ Link copiato!\n\nManda questo link al cliente:\n${data.packageUrl}\n\nBoxes: ${data.boxes}`);
+                } else {
+                  alert("Errore: " + data.error);
+                }
+              }}
+              style={{ background: "rgba(124,92,252,0.15)", border: "0.5px solid rgba(124,92,252,0.3)", color: "#7c5cfc", padding: "8px 16px", borderRadius: "8px", cursor: "pointer", fontSize: "0.85rem", fontWeight: 700 }}
+            >
+              📦 Crea pacchetto manuale
+            </button>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "2rem" }}>
           <h1 style={{ fontWeight: 800, fontSize: "1.5rem", color: "#f5c842" }}>MysteryDrop Admin</h1>
           <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
